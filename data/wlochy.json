@@ -1,0 +1,632 @@
+[
+  {
+    "title": "Mona Lisa",
+    "artist": "Leonardo da Vinci",
+    "year": 1503,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mona_Lisa,_by_Leonardo_da_Vinci,_from_C2RMF_retouched.jpg?width=1600"
+  },
+  {
+    "title": "Narodziny Wenus",
+    "artist": "Sandro Botticelli",
+    "year": 1485,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg?width=1600"
+  },
+  {
+    "title": "Wiosna (Primavera)",
+    "artist": "Sandro Botticelli",
+    "year": 1482,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Botticelli-primavera.jpg?width=1600"
+  },
+  {
+    "title": "Stworzenie Adama",
+    "artist": "Michał Anioł",
+    "year": 1512,
+    "place": "Rzym (Watykan), Wlochy",
+    "lat": 41.9029,
+    "lon": 12.4545,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo_-_Creation_of_Adam_(cropped).jpg?width=1600"
+  },
+  {
+    "title": "Sąd Ostateczny",
+    "artist": "Michał Anioł",
+    "year": 1541,
+    "place": "Rzym (Watykan), Wlochy",
+    "lat": 41.9029,
+    "lon": 12.4545,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Michelangelo,_Giudizio_Universale_02.jpg?width=1600"
+  },
+  {
+    "title": "Szkoła Ateńska",
+    "artist": "Rafael Santi",
+    "year": 1511,
+    "place": "Rzym (Watykan), Wlochy",
+    "lat": 41.9029,
+    "lon": 12.4545,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Raphael_School_of_Athens.jpg?width=1600"
+  },
+  {
+    "title": "Madonna Sykstyńska",
+    "artist": "Rafael Santi",
+    "year": 1512,
+    "place": "Piacenza / Rzym, Wlochy",
+    "lat": 45.0526,
+    "lon": 9.693,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/RAFAEL_-_Madonna_Sixtina_(Gem%C3%A4ldegalerie_Alter_Meister,_Dresden,_1513-14._%C3%93leo_sobre_lienzo,_265_x_196_cm).jpg?width=1600"
+  },
+  {
+    "title": "Dama z gronostajem",
+    "artist": "Leonardo da Vinci",
+    "year": 1490,
+    "place": "Mediolan, Wlochy",
+    "lat": 45.4642,
+    "lon": 9.19,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Lady_with_an_Ermine_-_Leonardo_da_Vinci_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Ostatnia Wieczerza",
+    "artist": "Leonardo da Vinci",
+    "year": 1498,
+    "place": "Mediolan, Wlochy",
+    "lat": 45.4659,
+    "lon": 9.171,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/%C3%9Altima_Cena_-_Da_Vinci_5.jpg?width=1600"
+  },
+  {
+    "title": "Powołanie świętego Mateusza",
+    "artist": "Caravaggio",
+    "year": 1600,
+    "place": "Rzym, Wlochy",
+    "lat": 41.8996,
+    "lon": 12.4746,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Calling_of_Saint_Matthew-Caravaggio_(1599-1600).jpg?width=1600"
+  },
+  {
+    "title": "Judyta odcinająca głowę Holofernesowi",
+    "artist": "Caravaggio",
+    "year": 1599,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Judith_Beheading_Holofernes_-_Caravaggio.jpg?width=1600"
+  },
+  {
+    "title": "Niewierny Tomasz",
+    "artist": "Caravaggio",
+    "year": 1602,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio_-_The_Incredulity_of_Saint_Thomas.jpg?width=1600"
+  },
+  {
+    "title": "Bacchus",
+    "artist": "Caravaggio",
+    "year": 1598,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Bacco_-_Caravaggio.jpg?width=1600"
+  },
+  {
+    "title": "Złożenie do grobu",
+    "artist": "Caravaggio",
+    "year": 1603,
+    "place": "Rzym, Wlochy",
+    "lat": 41.8986,
+    "lon": 12.4768,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Entombment_of_Christ-Caravaggio_(c.1602-3).jpg?width=1600"
+  },
+  {
+    "title": "Wenus z Urbino",
+    "artist": "Tycjan",
+    "year": 1538,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4408,
+    "lon": 12.3155,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Titian_-_Venus_of_Urbino_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Wniebowzięcie Najświętszej Maryi Panny",
+    "artist": "Tycjan",
+    "year": 1518,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4371,
+    "lon": 12.3267,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Tizian_-_Assunta_1516-1518.jpg?width=1600"
+  },
+  {
+    "title": "Bacchus i Ariadna",
+    "artist": "Tycjan",
+    "year": 1523,
+    "place": "Ferrara / Wenecja, Wlochy",
+    "lat": 44.8381,
+    "lon": 11.6198,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Titian_Bacchus_and_Ariadne.jpg?width=1600"
+  },
+  {
+    "title": "Uczta w Kanie Galilejskiej",
+    "artist": "Paolo Veronese",
+    "year": 1563,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4298,
+    "lon": 12.3429,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Noces_de_Cana_-_Paolo_Veronese.jpg?width=1600"
+  },
+  {
+    "title": "Pocałunek Judasza",
+    "artist": "Giotto di Bondone",
+    "year": 1305,
+    "place": "Padwa, Wlochy",
+    "lat": 45.4118,
+    "lon": 11.8797,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto_-_Scrovegni_-_-31-_-_Kiss_of_Judas.jpg?width=1600"
+  },
+  {
+    "title": "Opłakiwanie Chrystusa",
+    "artist": "Giotto di Bondone",
+    "year": 1305,
+    "place": "Padwa, Wlochy",
+    "lat": 45.4118,
+    "lon": 11.8797,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Giotto_-_Scrovegni_-_-36-_-_Lamentation_(The_Mourning_of_Christ).jpg?width=1600"
+  },
+  {
+    "title": "Burza",
+    "artist": "Giorgione",
+    "year": 1508,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4408,
+    "lon": 12.3155,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgione_-_La_tempesta.jpg?width=1600"
+  },
+  {
+    "title": "Śpiąca Wenus",
+    "artist": "Giorgione",
+    "year": 1510,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4408,
+    "lon": 12.3155,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgione_-_Sleeping_Venus_-_Google_Art_Project_2.jpg?width=1600"
+  },
+  {
+    "title": "Chrzest Chrystusa",
+    "artist": "Piero della Francesca",
+    "year": 1450,
+    "place": "Sansepolcro, Wlochy",
+    "lat": 43.5714,
+    "lon": 12.1408,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Piero_della_Francesca_-_The_Baptism_of_Christ_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Biczowanie Chrystusa",
+    "artist": "Piero della Francesca",
+    "year": 1455,
+    "place": "Urbino, Wlochy",
+    "lat": 43.7262,
+    "lon": 12.6366,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Flagellazione_di_Cristo_(Piero_della_Francesca).jpg?width=1600"
+  },
+  {
+    "title": "Zwiastowanie",
+    "artist": "Fra Angelico",
+    "year": 1442,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7788,
+    "lon": 11.2589,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Fra_Angelico_-_The_Annunciation_(San_Marco)_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Trójca Święta",
+    "artist": "Masaccio",
+    "year": 1427,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7746,
+    "lon": 11.2494,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Masaccio,_trinit%C3%A0.jpg?width=1600"
+  },
+  {
+    "title": "Grosz czynszowy",
+    "artist": "Masaccio",
+    "year": 1425,
+    "place": "Florencja, Wlochy",
+    "lat": 43.768,
+    "lon": 11.2435,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Masaccio_-_The_Tribute_Money_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Martwy Chrystus",
+    "artist": "Andrea Mantegna",
+    "year": 1480,
+    "place": "Mantua, Wlochy",
+    "lat": 45.1564,
+    "lon": 10.7914,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_dead_Christ_and_three_mourners,_by_Andrea_Mantegna.jpg?width=1600"
+  },
+  {
+    "title": "Camera degli Sposi (Oculus)",
+    "artist": "Andrea Mantegna",
+    "year": 1474,
+    "place": "Mantua, Wlochy",
+    "lat": 45.1606,
+    "lon": 10.8,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrea_Mantegna_081.jpg?width=1600"
+  },
+  {
+    "title": "Madonna z długą szyją",
+    "artist": "Parmigianino",
+    "year": 1535,
+    "place": "Parma, Wlochy",
+    "lat": 44.8015,
+    "lon": 10.3279,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Parmigianino_-_Madonna_dal_collo_lungo_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Judyta zabijająca Holofernesa",
+    "artist": "Artemisia Gentileschi",
+    "year": 1620,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Judith_Slaying_Holofernes_-_Artemisia_Gentileschi_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Pocałunek",
+    "artist": "Francesco Hayez",
+    "year": 1859,
+    "place": "Mediolan, Wlochy",
+    "lat": 45.472,
+    "lon": 9.1878,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/El_Beso_(Francesco_Hayez).jpg?width=1600"
+  },
+  {
+    "title": "Widok na Canal Grande i bazylikę Santa Maria della Salute",
+    "artist": "Canaletto (Giovanni Antonio Canal)",
+    "year": 1730,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4307,
+    "lon": 12.3347,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto_-_The_Entrance_to_the_Grand_Canal,_Venice.jpg?width=1600"
+  },
+  {
+    "title": "Tajemnica i melancholia ulicy",
+    "artist": "Giorgio de Chirico",
+    "year": 1914,
+    "place": "Ferrara / Turyn, Wlochy",
+    "lat": 44.8381,
+    "lon": 11.6198,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Giorgio_de_Chirico,_1914,_Mystery_and_Melancholy_of_a_Street.jpg?width=1600"
+  },
+  {
+    "title": "Dynamizm psa na smyczy",
+    "artist": "Giacomo Balla",
+    "year": 1912,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Dynamism_of_a_Dog_on_a_Leash.jpg?width=1600"
+  },
+  {
+    "title": "Złożenie do grobu (Pietà bandini)",
+    "artist": "Tycjan",
+    "year": 1559,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4408,
+    "lon": 12.3155,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Titian_-_The_Entombment_-_Prado.jpg?width=1600"
+  },
+  {
+    "title": "Autoportret",
+    "artist": "Tycjan",
+    "year": 1567,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4408,
+    "lon": 12.3155,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Titian_-_Self-Portrait_-_Prado.jpg?width=1600"
+  },
+  {
+    "title": "Chrzest Chrystusa",
+    "artist": "Andrea del Verrocchio",
+    "year": 1475,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Andrea_del_Verrocchio,_Leonardo_da_Vinci_-_Baptism_of_Christ_-_Uffizi.jpg?width=1600"
+  },
+  {
+    "title": "Zwiastowanie",
+    "artist": "Leonardo da Vinci",
+    "year": 1472,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_-_Annunciazione_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Święta Anna Samotrzecia",
+    "artist": "Leonardo da Vinci",
+    "year": 1510,
+    "place": "Florencja / Mediolan, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_-_The_Virgin_and_Child_with_Saint_Anne_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Jan Chrzciciel",
+    "artist": "Leonardo da Vinci",
+    "year": 1513,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/St_John_the_Baptist_by_Leonardo_da_Vinci_1513-1516.jpg?width=1600"
+  },
+  {
+    "title": "Zaślubiny Marii z Józefem",
+    "artist": "Rafael Santi",
+    "year": 1504,
+    "place": "Città di Castello, Wlochy",
+    "lat": 43.4578,
+    "lon": 12.2403,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Marriage_of_the_Virgin_by_Raphael.jpg?width=1600"
+  },
+  {
+    "title": "Przemienienie Pańskie",
+    "artist": "Rafael Santi",
+    "year": 1520,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9029,
+    "lon": 12.4545,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Transfiguration_Raphael.jpg?width=1600"
+  },
+  {
+    "title": "Triumf Galatei",
+    "artist": "Rafael Santi",
+    "year": 1514,
+    "place": "Rzym, Wlochy",
+    "lat": 41.8931,
+    "lon": 12.4673,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Triumph_of_Galatea_by_Raphael.jpg?width=1600"
+  },
+  {
+    "title": "Portret Baldassare Castiglione",
+    "artist": "Rafael Santi",
+    "year": 1515,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Portrait_of_Baldassare_Castiglione,_by_Raffaello_Sanzio,_from_C2RMF_retouched.jpg?width=1600"
+  },
+  {
+    "title": "Piękna ogrodniczka (La Belle Jardinière)",
+    "artist": "Rafael Santi",
+    "year": 1507,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Belle_Jardini%C3%A8re_by_Raphael.jpg?width=1600"
+  },
+  {
+    "title": "Głowa Meduzy",
+    "artist": "Caravaggio",
+    "year": 1597,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Medusa_by_Caravaggio_Uffizi.jpg?width=1600"
+  },
+  {
+    "title": "Ścięcie św. Jana Chrzciciela",
+    "artist": "Caravaggio",
+    "year": 1608,
+    "place": "Valletta / Syrakuzy, Wlochy",
+    "lat": 37.0755,
+    "lon": 15.2866,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Beheading_of_Saint_John_the_Baptist_-_Caravaggio.jpg?width=1600"
+  },
+  {
+    "title": "Dawid z głową Goliata",
+    "artist": "Caravaggio",
+    "year": 1610,
+    "place": "Neapol / Rzym, Wlochy",
+    "lat": 40.8518,
+    "lon": 14.2681,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio_-_David_con_la_testa_di_Golia.jpg?width=1600"
+  },
+  {
+    "title": "Grający w kości (Szulerzy)",
+    "artist": "Caravaggio",
+    "year": 1594,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Cardsharps_-_Caravaggio.jpg?width=1600"
+  },
+  {
+    "title": "Nawrócenie św. Pawła",
+    "artist": "Caravaggio",
+    "year": 1601,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9114,
+    "lon": 12.4764,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Conversion_on_the_Way_to_Damascus-Caravaggio_(c.1600-1).jpg?width=1600"
+  },
+  {
+    "title": "Ukrzyżowanie św. Piotra",
+    "artist": "Caravaggio",
+    "year": 1601,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9114,
+    "lon": 12.4764,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Crucifixion_of_Saint_Peter-Caravaggio_(c.1600).jpg?width=1600"
+  },
+  {
+    "title": "Wenus i Mars",
+    "artist": "Sandro Botticelli",
+    "year": 1485,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Venus_and_Mars_by_Botticelli.jpg?width=1600"
+  },
+  {
+    "title": "Pallas i centaur",
+    "artist": "Sandro Botticelli",
+    "year": 1482,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro_Botticelli_-_Pallas_and_the_Centaur_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Tondo Doni",
+    "artist": "Michał Anioł",
+    "year": 1506,
+    "place": "Florencja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Doni_Tondo_Michelangelo.jpg?width=1600"
+  },
+  {
+    "title": "Odnalezienie ciała św. Marka",
+    "artist": "Tintoretto",
+    "year": 1562,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4408,
+    "lon": 12.3155,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Finding_of_the_body_of_St_Mark_by_Tintoretto.jpg?width=1600"
+  },
+  {
+    "title": "Ostatnia Wieczerza",
+    "artist": "Tintoretto",
+    "year": 1594,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4297,
+    "lon": 12.3432,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Last_Supper_by_Tintoretto_-_San_Giorgio_Maggiore.jpg?width=1600"
+  },
+  {
+    "title": "Cud św. Marka (Oswobodzenie niewolnika)",
+    "artist": "Tintoretto",
+    "year": 1548,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4312,
+    "lon": 12.3283,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Tintoretto_-_The_Miracle_of_St_Mark_Freeing_the_Slave_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Ekstaza św. Teresy",
+    "artist": "Giovanni Lorenzo Bernini",
+    "year": 1652,
+    "place": "Rzym, Wlochy",
+    "lat": 41.905,
+    "lon": 12.4947,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ecstasy_of_Saint_Teresa_September_2015-2a.jpg?width=1600"
+  },
+  {
+    "title": "Apollon i Dafne",
+    "artist": "Giovanni Lorenzo Bernini",
+    "year": 1625,
+    "place": "Rzym, Wlochy",
+    "lat": 41.9142,
+    "lon": 12.4922,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Apollo_and_Daphne_(Bernini).jpg?width=1600"
+  },
+  {
+    "title": "Autoportret w wypukłym zwierciadle",
+    "artist": "Parmigianino",
+    "year": 1524,
+    "place": "Parma / Rzym, Wlochy",
+    "lat": 44.8015,
+    "lon": 10.3279,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Parmigianino_-_Self-portrait_in_a_Convex_Mirror_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Uczta w domu Lewiego",
+    "artist": "Paolo Veronese",
+    "year": 1573,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4312,
+    "lon": 12.3283,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Feast_in_the_House_of_Levi_by_Paolo_Veronese.jpg?width=1600"
+  },
+  {
+    "title": "Regaty na Canale Grande",
+    "artist": "Canaletto (Giovanni Antonio Canal)",
+    "year": 1740,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4371,
+    "lon": 12.3326,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Canaletto_-_A_Regatta_on_the_Grand_Canal.jpg?width=1600"
+  },
+  {
+    "title": "Plac św. Marka w Wenecji",
+    "artist": "Canaletto (Giovanni Antonio Canal)",
+    "year": 1723,
+    "place": "Wenecja, Wlochy",
+    "lat": 45.4342,
+    "lon": 12.3385,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_San_Marco_by_Canaletto_(Madrid).jpg?width=1600"
+  },
+  {
+    "title": "Kawiarnia nocą (Caffè Florian)",
+    "artist": "Michele Gordigiani",
+    "year": 1880,
+    "place": "Florencja / Wenecja, Wlochy",
+    "lat": 43.7696,
+    "lon": 11.2558,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Michele_Gordigiani_-_Autoportret.jpg?width=1600"
+  },
+  {
+    "title": "Miasto budzi się (Il lavoro)",
+    "artist": "Umberto Boccioni",
+    "year": 1910,
+    "place": "Mediolan, Wlochy",
+    "lat": 45.4642,
+    "lon": 9.19,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_City_Rises_by_Umberto_Boccioni_1910.jpg?width=1600"
+  },
+  {
+    "title": "Jedyny kształt ciągłości w przestrzeni",
+    "artist": "Umberto Boccioni",
+    "year": 1913,
+    "place": "Mediolan, Wlochy",
+    "lat": 45.4642,
+    "lon": 9.19,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/%27Unique_Forms_of_Continuity_in_Space%27,_1913_bronze_sculpture_by_Umberto_Boccioni.jpg?width=1600"
+  },
+  {
+    "title": "Portret Jeanne Hébuterne w kapeluszu",
+    "artist": "Amedeo Modigliani",
+    "year": 1918,
+    "place": "Livorno / Nicea, Wlochy",
+    "lat": 43.5485,
+    "lon": 10.3106,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Amedeo_Modigliani_-_Jeanne_H%C3%A9buterne_with_Hat_and_Necklace.jpg?width=1600"
+  },
+  {
+    "title": "Akt leżący",
+    "artist": "Amedeo Modigliani",
+    "year": 1917,
+    "place": "Livorno / Paryż, Wlochy",
+    "lat": 43.5485,
+    "lon": 10.3106,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Amedeo_Modigliani_-_Nu_couch%C3%A9_(1917).jpg?width=1600"
+  },
+  {
+    "title": "Wskrzeszenie Łazarza",
+    "artist": "Caravaggio",
+    "year": 1609,
+    "place": "Messyna, Wlochy",
+    "lat": 38.1938,
+    "lon": 15.554,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Raising_of_Lazarus-Caravaggio_(1609).jpg?width=1600"
+  }
+]

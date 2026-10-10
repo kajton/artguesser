@@ -1,0 +1,632 @@
+[
+  {
+    "title": "Wolność wiodąca lud na barykady",
+    "artist": "Eugène Delacroix",
+    "year": 1830,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A8ne_Delacroix_-_La_libert%C3%A9_guidant_le_peuple.jpg?width=1600"
+  },
+  {
+    "title": "Impresja, wschód słońca",
+    "artist": "Claude Monet",
+    "year": 1872,
+    "place": "Hawr, Francja",
+    "lat": 49.4944,
+    "lon": 0.1079,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet_-_Impression,_Sunrise.jpg?width=1600"
+  },
+  {
+    "title": "Lilie wodne (Nenufary)",
+    "artist": "Claude Monet",
+    "year": 1916,
+    "place": "Giverny, Francja",
+    "lat": 49.0753,
+    "lon": 1.5337,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Water_Lilies_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Katedra w Rouen w słońcu",
+    "artist": "Claude Monet",
+    "year": 1894,
+    "place": "Rouen, Francja",
+    "lat": 49.4402,
+    "lon": 1.095,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Cathedrale_de_Rouen._Le_portail_soleil_matinal_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Spacer (Kobieta z parasolką)",
+    "artist": "Claude Monet",
+    "year": 1875,
+    "place": "Argenteuil, Francja",
+    "lat": 48.9461,
+    "lon": 2.2478,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Woman_with_a_Parasol_-_Madame_Monet_and_Her_Son_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Śniadanie na trawie",
+    "artist": "Édouard Manet",
+    "year": 1863,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard_Manet_-_Le_D%C3%A9jeuner_sur_l%27herbe.jpg?width=1600"
+  },
+  {
+    "title": "Olimpia",
+    "artist": "Édouard Manet",
+    "year": 1863,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard_Manet_-_Olympia_-_Google_Art_Project_3.jpg?width=1600"
+  },
+  {
+    "title": "Bar w Folies-Bergère",
+    "artist": "Édouard Manet",
+    "year": 1882,
+    "place": "Paryż, Francja",
+    "lat": 48.8744,
+    "lon": 2.3444,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard_Manet,_A_Bar_at_the_Folies-Berg%C3%A8re.jpg?width=1600"
+  },
+  {
+    "title": "Balerina na scenie",
+    "artist": "Edgar Degas",
+    "year": 1878,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar_Germain_Hilaire_Degas_011.jpg?width=1600"
+  },
+  {
+    "title": "Lekcja tańca",
+    "artist": "Edgar Degas",
+    "year": 1874,
+    "place": "Paryż, Francja",
+    "lat": 48.872,
+    "lon": 2.3317,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Dance_Class_Degas.jpg?width=1600"
+  },
+  {
+    "title": "Absynt",
+    "artist": "Edgar Degas",
+    "year": 1876,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar_Degas_-_Dans_un_caf%C3%A9_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Bal w Moulin de la Galette",
+    "artist": "Pierre-Auguste Renoir",
+    "year": 1876,
+    "place": "Montmartre (Paryż), Francja",
+    "lat": 48.8867,
+    "lon": 2.3364,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste_Renoir,_Le_Moulin_de_la_Galette.jpg?width=1600"
+  },
+  {
+    "title": "Śniadanie wioślarzy",
+    "artist": "Pierre-Auguste Renoir",
+    "year": 1881,
+    "place": "Chatou, Francja",
+    "lat": 48.8967,
+    "lon": 2.1583,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste_Renoir_-_Luncheon_of_the_Boating_Party_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Niedzielne popołudnie na wyspie Grande Jatte",
+    "artist": "Georges Seurat",
+    "year": 1886,
+    "place": "Paryż, Francja",
+    "lat": 48.8906,
+    "lon": 2.2611,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/A_Sunday_on_La_Grande_Jatte_--_Georges_Seurat.jpg?width=1600"
+  },
+  {
+    "title": "Góra Sainte-Victoire",
+    "artist": "Paul Cézanne",
+    "year": 1904,
+    "place": "Aix-en-Provence, Francja",
+    "lat": 43.5323,
+    "lon": 5.4859,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Mont_Sainte-Victoire_-_Paul_C%C3%A9zanne_-_Philadelphia_Museum_of_Art.jpg?width=1600"
+  },
+  {
+    "title": "Gracze w karty",
+    "artist": "Paul Cézanne",
+    "year": 1895,
+    "place": "Aix-en-Provence, Francja",
+    "lat": 43.5297,
+    "lon": 5.4474,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Les_Joueurs_de_cartes,_par_Paul_C%C3%A9zanne.jpg?width=1600"
+  },
+  {
+    "title": "Kąpiące się",
+    "artist": "Paul Cézanne",
+    "year": 1906,
+    "place": "Aix-en-Provence, Francja",
+    "lat": 43.5297,
+    "lon": 5.4474,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Bathers_by_Paul_C%C3%A9zanne.jpg?width=1600"
+  },
+  {
+    "title": "Żółty Chrystus",
+    "artist": "Paul Gauguin",
+    "year": 1889,
+    "place": "Pont-Aven, Francja",
+    "lat": 47.8561,
+    "lon": -3.7461,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Yellow_Christ_by_Paul_Gauguin.jpg?width=1600"
+  },
+  {
+    "title": "Skąd przychodzimy? Kim jesteśmy? Dokąd zmierzamy?",
+    "artist": "Paul Gauguin",
+    "year": 1897,
+    "place": "Tahiti / Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul_Gauguin_-_D%27ou_venons-nous_Que_sommes-nous_Ou_allons-nous.jpg?width=1600"
+  },
+  {
+    "title": "W Moulin Rouge",
+    "artist": "Henri de Toulouse-Lautrec",
+    "year": 1895,
+    "place": "Paryż, Francja",
+    "lat": 48.8841,
+    "lon": 2.3322,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/At_the_Moulin_Rouge_by_Henri_de_Toulouse-Lautrec.jpg?width=1600"
+  },
+  {
+    "title": "Koronczarka",
+    "artist": "Jan Vermeer",
+    "year": 1670,
+    "place": "Paryż, Francja",
+    "lat": 48.8606,
+    "lon": 2.3376,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Lacemaker_by_Johannes_Vermeer_Louvre_INV_RF_1985.jpg?width=1600"
+  },
+  {
+    "title": "Przysięga Horacjuszy",
+    "artist": "Jacques-Louis David",
+    "year": 1784,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Oath_of_the_Horatii_by_Jacques-Louis_David.jpg?width=1600"
+  },
+  {
+    "title": "Śmierć Marata",
+    "artist": "Jacques-Louis David",
+    "year": 1793,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Death_of_Marat_by_David.jpg?width=1600"
+  },
+  {
+    "title": "Koronacja Napoleona",
+    "artist": "Jacques-Louis David",
+    "year": 1807,
+    "place": "Paryż, Francja",
+    "lat": 48.853,
+    "lon": 2.3499,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis_David_-_The_Coronation_of_Napoleon_(1805-1807).jpg?width=1600"
+  },
+  {
+    "title": "Napoleon przekraczający Przełęcz Świętego Bernarda",
+    "artist": "Jacques-Louis David",
+    "year": 1801,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacques-Louis_David_-_Napoleon_crossing_the_Alps_-_Malmaison.jpg?width=1600"
+  },
+  {
+    "title": "Tratwa Meduzy",
+    "artist": "Théodore Géricault",
+    "year": 1819,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Le_Radeau_de_la_M%C3%A9duse_G%C3%A9ricault.jpg?width=1600"
+  },
+  {
+    "title": "Kobiety zbierające kłosy (Gleaners)",
+    "artist": "Jean-François Millet",
+    "year": 1857,
+    "place": "Barbizon, Francja",
+    "lat": 48.4453,
+    "lon": 2.6078,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Fran%C3%A7ois_Millet_-_Des_glaneuses.jpg?width=1600"
+  },
+  {
+    "title": "Anioł Pański",
+    "artist": "Jean-François Millet",
+    "year": 1859,
+    "place": "Barbizon, Francja",
+    "lat": 48.4453,
+    "lon": 2.6078,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean-Fran%C3%A7ois_Millet_-_The_Angelus_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Pochówek w Ornans",
+    "artist": "Gustave Courbet",
+    "year": 1850,
+    "place": "Ornans, Francja",
+    "lat": 47.1067,
+    "lon": 6.1436,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Courbet_-_Un_enterrement_%C3%A0_Ornans.jpg?width=1600"
+  },
+  {
+    "title": "Pochodzenie świata",
+    "artist": "Gustave Courbet",
+    "year": 1866,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Origin-of-the-World.jpg?width=1600"
+  },
+  {
+    "title": "Huśtawka",
+    "artist": "Jean-Honoré Fragonard",
+    "year": 1767,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Swing_by_Jean-Honor%C3%A9_Fragonard.jpg?width=1600"
+  },
+  {
+    "title": "Odaliska",
+    "artist": "Jean-Auguste-Dominique Ingres",
+    "year": 1814,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jean_Auguste_Dominique_Ingres,_La_Grande_Odalisque.jpg?width=1600"
+  },
+  {
+    "title": "Panny z Awinionu",
+    "artist": "Pablo Picasso",
+    "year": 1907,
+    "place": "Paryż, Francja",
+    "lat": 48.8867,
+    "lon": 2.3431,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Les_Demoiselles_d%27Avignon.jpg?width=1600"
+  },
+  {
+    "title": "Radość życia",
+    "artist": "Henri Matisse",
+    "year": 1906,
+    "place": "Collioure / Paryż, Francja",
+    "lat": 42.525,
+    "lon": 3.0833,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Matisse_-_Le_Bonheur_de_vivre.jpg?width=1600"
+  },
+  {
+    "title": "Taniec",
+    "artist": "Henri Matisse",
+    "year": 1910,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/La_Danse_(I)_by_Matisse.jpg?width=1600"
+  },
+  {
+    "title": "Kąpiący się w Asnières",
+    "artist": "Georges Seurat",
+    "year": 1884,
+    "place": "Asnières-sur-Seine / Paryż, Francja",
+    "lat": 48.9106,
+    "lon": 2.2889,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges_Seurat_-_Bathers_at_Asni%C3%A8res_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Cyrk",
+    "artist": "Georges Seurat",
+    "year": 1891,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Georges_Seurat_-_The_Circus_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Rzeź na Chios",
+    "artist": "Eugène Delacroix",
+    "year": 1824,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A8ne_Delacroix_-_The_Massacre_at_Chios.jpg?width=1600"
+  },
+  {
+    "title": "Śmierć Sardanapala",
+    "artist": "Eugène Delacroix",
+    "year": 1827,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Eug%C3%A8ne_Delacroix_-_La_Mort_de_Sardanapale_(1827).jpg?width=1600"
+  },
+  {
+    "title": "Kobiety algierskie w swoim apartamencie",
+    "artist": "Eugène Delacroix",
+    "year": 1834,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Femmes_d%27Alger_dans_leur_appartement_Eug%C3%A8ne_Delacroix_Louvre_INV_3824.jpg?width=1600"
+  },
+  {
+    "title": "Kolej żelazna (Dworzec Saint-Lazare)",
+    "artist": "Édouard Manet",
+    "year": 1873,
+    "place": "Paryż, Francja",
+    "lat": 48.8772,
+    "lon": 2.3256,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard_Manet_-_The_Railway_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Flecista",
+    "artist": "Édouard Manet",
+    "year": 1866,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard_Manet_-_The_Fifer_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Muzyka w ogrodzie Tuileries",
+    "artist": "Édouard Manet",
+    "year": 1862,
+    "place": "Paryż, Francja",
+    "lat": 48.8636,
+    "lon": 2.3275,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard_Manet_-_Music_in_the_Tuileries_Garden_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Balkon",
+    "artist": "Édouard Manet",
+    "year": 1868,
+    "place": "Paryż / Boulogne-sur-Mer, Francja",
+    "lat": 50.7252,
+    "lon": 1.6133,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edouard_Manet_-_The_Balcony_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Dworzec Saint-Lazare",
+    "artist": "Claude Monet",
+    "year": 1877,
+    "place": "Paryż, Francja",
+    "lat": 48.8772,
+    "lon": 2.3256,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_La_Gare_Saint-Lazare_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Pole maków w Argenteuil",
+    "artist": "Claude Monet",
+    "year": 1873,
+    "place": "Argenteuil, Francja",
+    "lat": 48.9461,
+    "lon": 2.2478,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Poppy_Field_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Stogi siana (Koniec lata)",
+    "artist": "Claude Monet",
+    "year": 1891,
+    "place": "Giverny, Francja",
+    "lat": 49.0753,
+    "lon": 1.5337,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Wheatstacks_(End_of_Summer).jpg?width=1600"
+  },
+  {
+    "title": "Bulwar Kapucynów",
+    "artist": "Claude Monet",
+    "year": 1873,
+    "place": "Paryż, Francja",
+    "lat": 48.8706,
+    "lon": 2.3325,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude_Monet_-_Boulevard_des_Capucines_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Wioślarze w Chatou",
+    "artist": "Pierre-Auguste Renoir",
+    "year": 1879,
+    "place": "Chatou, Francja",
+    "lat": 48.8967,
+    "lon": 2.1583,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste_Renoir_-_Rowers_at_Chatou_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Dziewczynka z konewką",
+    "artist": "Pierre-Auguste Renoir",
+    "year": 1876,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste_Renoir_-_A_Girl_with_a_Watering_Can_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Kąpiące się",
+    "artist": "Pierre-Auguste Renoir",
+    "year": 1887,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Large_Bathers_by_Auguste_Renoir_(1887).jpg?width=1600"
+  },
+  {
+    "title": "Lorda L'Etoile (Gwiazda)",
+    "artist": "Edgar Degas",
+    "year": 1878,
+    "place": "Paryż, Francja",
+    "lat": 48.872,
+    "lon": 2.3317,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar_Degas_-_L%27%C3%89toile.jpg?width=1600"
+  },
+  {
+    "title": "Prasowaczki",
+    "artist": "Edgar Degas",
+    "year": 1884,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar_Germain_Hilaire_Degas_029.jpg?width=1600"
+  },
+  {
+    "title": "Kosz jabłek",
+    "artist": "Paul Cézanne",
+    "year": 1895,
+    "place": "Aix-en-Provence, Francja",
+    "lat": 43.5297,
+    "lon": 5.4474,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/The_Basket_of_Apples_by_Paul_C%C3%A9zanne.jpg?width=1600"
+  },
+  {
+    "title": "Zatoka Marsylska widziana z L'Estaque",
+    "artist": "Paul Cézanne",
+    "year": 1885,
+    "place": "L'Estaque (Marsylia), Francja",
+    "lat": 43.3611,
+    "lon": 5.3139,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul_C%C3%A9zanne_-_The_Bay_of_Marseille,_Seen_from_L%27Estaque_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Chłopiec w czerwonej kamizelce",
+    "artist": "Paul Cézanne",
+    "year": 1888,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul_C%C3%A9zanne_-_Boy_in_a_Red_Waistcoat_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Wizja po kazaniu (Walka Jakuba z aniołem)",
+    "artist": "Paul Gauguin",
+    "year": 1888,
+    "place": "Pont-Aven, Francja",
+    "lat": 47.8561,
+    "lon": -3.7461,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul_Gauguin_-_Vision_after_the_Sermon.jpg?width=1600"
+  },
+  {
+    "title": "Dwie kobiety na plaży (Tahiti)",
+    "artist": "Paul Gauguin",
+    "year": 1891,
+    "place": "Paryż / Tahiti, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Femmes_de_Tahiti_Paul_Gauguin_RMN759750.jpg?width=1600"
+  },
+  {
+    "title": "Czysty (La Goulue wchodząca do Moulin Rouge)",
+    "artist": "Henri de Toulouse-Lautrec",
+    "year": 1892,
+    "place": "Paryż, Francja",
+    "lat": 48.8841,
+    "lon": 2.3322,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Henri_de_Toulouse-Lautrec_-_La_Goulue_arrivant_au_Moulin_Rouge.jpg?width=1600"
+  },
+  {
+    "title": "Jane Avril tańcząca",
+    "artist": "Henri de Toulouse-Lautrec",
+    "year": 1892,
+    "place": "Paryż, Francja",
+    "lat": 48.8841,
+    "lon": 2.3322,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jane_Avril_Dancing_by_Henri_de_Toulouse-Lautrec_1892.jpg?width=1600"
+  },
+  {
+    "title": "Pracownia malarza",
+    "artist": "Gustave Courbet",
+    "year": 1855,
+    "place": "Paryż / Ornans, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Courbet_-_L%27Atelier_du_peintre.jpg?width=1600"
+  },
+  {
+    "title": "Dzień dobry, panie Courbet",
+    "artist": "Gustave Courbet",
+    "year": 1854,
+    "place": "Montpellier, Francja",
+    "lat": 43.6108,
+    "lon": 3.8767,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Courbet_010.jpg?width=1600"
+  },
+  {
+    "title": "Kamieniarze",
+    "artist": "Gustave Courbet",
+    "year": 1849,
+    "place": "Ornans, Francja",
+    "lat": 47.1067,
+    "lon": 6.1436,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave_Courbet_-_The_Stonebreaker_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Kąpielisko w Asnières",
+    "artist": "Paul Signac",
+    "year": 1888,
+    "place": "Asnières-sur-Seine, Francja",
+    "lat": 48.9106,
+    "lon": 2.2889,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul_Signac_-_The_Town_Beach,_Collioure,_Opus_165_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Port w Saint-Tropez",
+    "artist": "Paul Signac",
+    "year": 1901,
+    "place": "Saint-Tropez, Francja",
+    "lat": 43.2727,
+    "lon": 6.6406,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Paul_Signac_-_Le_Port_de_Saint-Tropez.jpg?width=1600"
+  },
+  {
+    "title": "Czerwona pracownia",
+    "artist": "Henri Matisse",
+    "year": 1911,
+    "place": "Issy-les-Moulineaux, Francja",
+    "lat": 48.8242,
+    "lon": 2.2742,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/L%27Atelier_Rouge.jpg?width=1600"
+  },
+  {
+    "title": "Kobieta w kapeluszu",
+    "artist": "Henri Matisse",
+    "year": 1905,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Femme_au_chapeau.png?width=1600"
+  },
+  {
+    "title": "Śpiąca Cyganka",
+    "artist": "Henri Rousseau",
+    "year": 1897,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Henri_Rousseau_-_The_Sleeping_Gypsy_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Sen",
+    "artist": "Henri Rousseau",
+    "year": 1910,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Henri_Rousseau_-_The_Dream_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Odjazd na Cyterę",
+    "artist": "Antoine Watteau",
+    "year": 1717,
+    "place": "Paryż, Francja",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Antoine_Watteau_-_P%C3%A8lerinage_%C3%A0_l%27%C3%AEle_de_Cyth%C3%A8re.jpg?width=1600"
+  }
+]

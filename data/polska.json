@@ -1,0 +1,632 @@
+[
+  {
+    "title": "Bitwa pod Grunwaldem",
+    "artist": "Jan Matejko",
+    "year": 1878,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Bitwa_pod_Grunwaldem.jpg?width=1600"
+  },
+  {
+    "title": "Stańczyk",
+    "artist": "Jan Matejko",
+    "year": 1862,
+    "place": "Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Sta%C5%84czyk.jpg?width=1600"
+  },
+  {
+    "title": "Szał uniesień",
+    "artist": "Władysław Podkowiński",
+    "year": 1894,
+    "place": "Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/W%C5%82adys%C5%82aw_Podkowi%C5%84ski_-_Sza%C5%82_uniesie%C5%84.jpg?width=1600"
+  },
+  {
+    "title": "Babie lato",
+    "artist": "Józef Chełmoński",
+    "year": 1875,
+    "place": "Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Babie_lato.jpg?width=1600"
+  },
+  {
+    "title": "Bociany",
+    "artist": "Józef Chełmoński",
+    "year": 1900,
+    "place": "Kuklówka Zarzeczna, Polska",
+    "lat": 52.0292,
+    "lon": 20.6125,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Bociany.jpg?width=1600"
+  },
+  {
+    "title": "Czwórka",
+    "artist": "Józef Chełmoński",
+    "year": 1881,
+    "place": "Paryż / Ukraina, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Czw%C3%B3rka.jpg?width=1600"
+  },
+  {
+    "title": "Żydówka z pomarańczami",
+    "artist": "Aleksander Gierymski",
+    "year": 1881,
+    "place": "Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Aleksander_Gierymski_-_Jewess_with_Oranges_-_Google_Art_Project.jpg?width=1600"
+  },
+  {
+    "title": "Piaskarze",
+    "artist": "Aleksander Gierymski",
+    "year": 1887,
+    "place": "Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Aleksander_Gierymski_-_Piaskarze.jpg?width=1600"
+  },
+  {
+    "title": "Święto Trąbek",
+    "artist": "Aleksander Gierymski",
+    "year": 1884,
+    "place": "Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Aleksander_Gierymski_-_Swieto_trabek.jpg?width=1600"
+  },
+  {
+    "title": "Trumna chłopska",
+    "artist": "Aleksander Gierymski",
+    "year": 1894,
+    "place": "Bronowice (Kraków), Polska",
+    "lat": 50.0833,
+    "lon": 19.8833,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Aleksander_Gierymski_-_Trumna_ch%C5%82opska.jpg?width=1600"
+  },
+  {
+    "title": "Altana",
+    "artist": "Aleksander Gierymski",
+    "year": 1882,
+    "place": "Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Aleksander_Gierymski_-_W_altanie.jpg?width=1600"
+  },
+  {
+    "title": "Autoportret z żoną",
+    "artist": "Stanisław Wyspiański",
+    "year": 1904,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Wyspia%C5%84ski_-_Autoportret_z_%C5%BCon%C4%85.jpg?width=1600"
+  },
+  {
+    "title": "Chochoły (Planty o świcie)",
+    "artist": "Stanisław Wyspiański",
+    "year": 1899,
+    "place": "Kraków, Polska",
+    "lat": 50.0619,
+    "lon": 19.9373,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Wyspia%C5%84ski_-_Chocho%C5%82y.jpg?width=1600"
+  },
+  {
+    "title": "Macierzyństwo",
+    "artist": "Stanisław Wyspiański",
+    "year": 1905,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Wyspia%C5%84ski_-_Macierzy%C5%84stwo_1905.jpg?width=1600"
+  },
+  {
+    "title": "Śpiący Mietek",
+    "artist": "Stanisław Wyspiański",
+    "year": 1904,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Wyspia%C5%84ski_-_%C5%9Api%C4%85cy_Mietek.jpg?width=1600"
+  },
+  {
+    "title": "Błędne koło",
+    "artist": "Jacek Malczewski",
+    "year": 1897,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacek_Malczewski_-_B%C5%82%C4%99dne_ko%C5%82o.jpg?width=1600"
+  },
+  {
+    "title": "Melancholia",
+    "artist": "Jacek Malczewski",
+    "year": 1894,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacek_Malczewski_-_Melancholia.jpg?width=1600"
+  },
+  {
+    "title": "Thanatos",
+    "artist": "Jacek Malczewski",
+    "year": 1898,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacek_Malczewski_-_Thanatos_1898.jpg?width=1600"
+  },
+  {
+    "title": "Zatruta studnia I",
+    "artist": "Jacek Malczewski",
+    "year": 1905,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacek_Malczewski_-_Zatruta_studnia_I.jpg?width=1600"
+  },
+  {
+    "title": "Hamlet polski. Portret Aleksandra Wielopolskiego",
+    "artist": "Jacek Malczewski",
+    "year": 1903,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacek_Malczewski_-_Hamlet_polski.jpg?width=1600"
+  },
+  {
+    "title": "Reytan – Upadek Polski",
+    "artist": "Jan Matejko",
+    "year": 1866,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Rejtan.jpg?width=1600"
+  },
+  {
+    "title": "Hołd pruski",
+    "artist": "Jan Matejko",
+    "year": 1882,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Ho%C5%82d_pruski.jpg?width=1600"
+  },
+  {
+    "title": "Astronom Kopernik, czyli rozmowa z Bogiem",
+    "artist": "Jan Matejko",
+    "year": 1873,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko-Astronomer_Copernicus-Conversation_with_God.jpg?width=1600"
+  },
+  {
+    "title": "Konstytucja 3 Maja 1791 roku",
+    "artist": "Jan Matejko",
+    "year": 1891,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Konstytucja_3_Maja_1791_roku.jpg?width=1600"
+  },
+  {
+    "title": "Dziwny ogród",
+    "artist": "Józef Mehoffer",
+    "year": 1903,
+    "place": "Siedliska k. Rzeszowa, Polska",
+    "lat": 49.95,
+    "lon": 21.9667,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Mehoffer_-_Dziwny_ogr%C3%B3d.jpg?width=1600"
+  },
+  {
+    "title": "Słońce majowe",
+    "artist": "Józef Mehoffer",
+    "year": 1911,
+    "place": "Jankówka, Polska",
+    "lat": 49.9333,
+    "lon": 20.0833,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Mehoffer_-_S%C5%82o%C5%84ce_majowe.jpg?width=1600"
+  },
+  {
+    "title": "Portret Stanisława Augusta Poniatowskiego w stroju koronacyjnym",
+    "artist": "Marcello Bacciarelli",
+    "year": 1768,
+    "place": "Warszawa, Polska",
+    "lat": 52.248,
+    "lon": 21.0153,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Marcello_Bacciarelli_-_Portret_Stanis%C5%82awa_Augusta_Poniatowskiego_w_stroju_koronacyjnym.jpg?width=1600"
+  },
+  {
+    "title": "Widok Warszawy od strony Pragi",
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": 1770,
+    "place": "Warszawa, Polska",
+    "lat": 52.25,
+    "lon": 21.0333,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Bernardo_Bellotto_-_Widok_Warszawy_od_strony_Pragi.jpg?width=1600"
+  },
+  {
+    "title": "Krakowskie Przedmieście od strony Nowego Światu",
+    "artist": "Bernardo Bellotto (Canaletto)",
+    "year": 1778,
+    "place": "Warszawa, Polska",
+    "lat": 52.2389,
+    "lon": 21.0175,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Bernardo_Bellotto_-_Krakowskie_Przedmie%C5%9Bcie_od_strony_Nowego_%C5%9Awiatu.jpg?width=1600"
+  },
+  {
+    "title": "Śmierć Barbary Radziwiłłówny",
+    "artist": "Józef Simmler",
+    "year": 1860,
+    "place": "Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Simmler_-_%C5%9Amier%C4%87_Barbary_Radziwi%C5%82%C5%82%C3%B3wny.jpg?width=1600"
+  },
+  {
+    "title": "Portret panny Mary Mazurowny",
+    "artist": "Olga Boznańska",
+    "year": 1908,
+    "place": "Paryż / Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Olga_Bozna%C5%84ska_-_Portret_panny_Mary_Mazurowny.jpg?width=1600"
+  },
+  {
+    "title": "Dziewczynka z chryzantemami",
+    "artist": "Olga Boznańska",
+    "year": 1894,
+    "place": "Monachium / Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Olga_Bozna%C5%84ska_-_Dziewczynka_z_chryzantemami.jpg?width=1600"
+  },
+  {
+    "title": "W altanie",
+    "artist": "Władysław Podkowiński",
+    "year": 1892,
+    "place": "Chrzęsne, Polska",
+    "lat": 52.4333,
+    "lon": 21.5833,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/W%C5%82adys%C5%82aw_Podkowi%C5%84ski_-_W_ogrodzie_(W_altanie).jpg?width=1600"
+  },
+  {
+    "title": "Olszynka Grochowska",
+    "artist": "Wojciech Kossak",
+    "year": 1928,
+    "place": "Warszawa, Polska",
+    "lat": 52.2417,
+    "lon": 21.1111,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Wojciech_Kossak_-_Olszynka_Grochowska.jpg?width=1600"
+  },
+  {
+    "title": "Ranny powstaniec",
+    "artist": "Stanisław Witkiewicz",
+    "year": 1881,
+    "place": "Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Witkiewicz_-_Ranny_powstaniec.jpg?width=1600"
+  },
+  {
+    "title": "Portret Stanisława Ignacego Witkiewicza",
+    "artist": "Stanisław Ignacy Witkiewicz (Witkacy)",
+    "year": 1930,
+    "place": "Zakopane, Polska",
+    "lat": 49.2992,
+    "lon": 19.9496,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Witkacy_-_Autoportret_1930.jpg?width=1600"
+  },
+  {
+    "title": "Autoportret – Ostatnie papierosy",
+    "artist": "Stanisław Ignacy Witkiewicz (Witkacy)",
+    "year": 1924,
+    "place": "Zakopane, Polska",
+    "lat": 49.2992,
+    "lon": 19.9496,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Ignacy_Witkiewicz_-_Autoportret_(1924).jpg?width=1600"
+  },
+  {
+    "title": "Kazanie Skargi",
+    "artist": "Jan Matejko",
+    "year": 1864,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Kazanie_Skargi.jpg?width=1600"
+  },
+  {
+    "title": "Zawieszenie dzwonu Zygmunta",
+    "artist": "Jan Matejko",
+    "year": 1874,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Zawieszenie_dzwonu_Zygmunta.jpg?width=1600"
+  },
+  {
+    "title": "Wernyhora",
+    "artist": "Jan Matejko",
+    "year": 1884,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Wernyhora.jpg?width=1600"
+  },
+  {
+    "title": "Kościuszko pod Racławicami",
+    "artist": "Jan Matejko",
+    "year": 1888,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Bitwa_pod_Rac%C5%82awicami.jpg?width=1600"
+  },
+  {
+    "title": "Rocznica 1863 (Polonia)",
+    "artist": "Jan Matejko",
+    "year": 1863,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Polonia_-_Rok_1863.jpg?width=1600"
+  },
+  {
+    "title": "Otrucie królowej Bony",
+    "artist": "Jan Matejko",
+    "year": 1859,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan_Matejko_-_Otrucie_kr%C3%B3lowej_Bony.jpg?width=1600"
+  },
+  {
+    "title": "Wiosna",
+    "artist": "Józef Chełmoński",
+    "year": 1898,
+    "place": "Kuklówka Zarzeczna, Polska",
+    "lat": 52.0292,
+    "lon": 20.6125,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Wiosna.jpg?width=1600"
+  },
+  {
+    "title": "Kuropatwy na śniegu",
+    "artist": "Józef Chełmoński",
+    "year": 1891,
+    "place": "Kuklówka Zarzeczna, Polska",
+    "lat": 52.0292,
+    "lon": 20.6125,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Kuropatwy.jpg?width=1600"
+  },
+  {
+    "title": "Burza",
+    "artist": "Józef Chełmoński",
+    "year": 1896,
+    "place": "Kuklówka Zarzeczna, Polska",
+    "lat": 52.0292,
+    "lon": 20.6125,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Burza.jpg?width=1600"
+  },
+  {
+    "title": "Noc na Ukrainie zimą",
+    "artist": "Józef Chełmoński",
+    "year": 1877,
+    "place": "Paryż / Ukraina, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/J%C3%B3zef_Che%C5%82mo%C5%84ski_-_Noc_na_Ukrainie_zim%C4%85.jpg?width=1600"
+  },
+  {
+    "title": "Święto Jordanu",
+    "artist": "Julian Fałat",
+    "year": 1893,
+    "place": "Kraków / Osiek, Polska",
+    "lat": 49.95,
+    "lon": 19.2667,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Julian_Fa%C5%82at_-_Po%C5%9Bwi%C4%99cenie_wody_(Jordan).jpg?width=1600"
+  },
+  {
+    "title": "Śnieg",
+    "artist": "Julian Fałat",
+    "year": 1907,
+    "place": "Bystra, Polska",
+    "lat": 49.7667,
+    "lon": 19.0167,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Julian_Fa%C5%82at_-_%C5%9Anieg.jpg?width=1600"
+  },
+  {
+    "title": "Krajobraz zimowy z rzeką",
+    "artist": "Julian Fałat",
+    "year": 1901,
+    "place": "Bystra, Polska",
+    "lat": 49.7667,
+    "lon": 19.0167,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Julian_Fa%C5%82at_-_Krajobraz_zimowy_z_rzek%C4%85.jpg?width=1600"
+  },
+  {
+    "title": "Autoportret w zbroi",
+    "artist": "Jacek Malczewski",
+    "year": 1914,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacek_Malczewski_-_Autoportret_w_zbroi.jpg?width=1600"
+  },
+  {
+    "title": "Wigilia na Syberii",
+    "artist": "Jacek Malczewski",
+    "year": 1892,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacek_Malczewski_-_Wigilia_na_Syberii.jpg?width=1600"
+  },
+  {
+    "title": "Śmierć Ellenai",
+    "artist": "Jacek Malczewski",
+    "year": 1883,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacek_Malczewski_-_%C5%9Amier%C4%87_Ellenai.jpg?width=1600"
+  },
+  {
+    "title": "Śmierć",
+    "artist": "Jacek Malczewski",
+    "year": 1902,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Jacek_Malczewski_-_%C5%9Amier%C4%87_(1902).jpg?width=1600"
+  },
+  {
+    "title": "Śpiący Staś",
+    "artist": "Stanisław Wyspiański",
+    "year": 1902,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Wyspia%C5%84ski_-_%C5%9Api%C4%85cy_Sta%C5%9B.jpg?width=1600"
+  },
+  {
+    "title": "Widok z okna pracowni na Kopiec Kościuszki",
+    "artist": "Stanisław Wyspiański",
+    "year": 1905,
+    "place": "Kraków, Polska",
+    "lat": 50.054,
+    "lon": 19.935,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Wyspia%C5%84ski_-_Widok_na_Kopiec_Ko%C5%9Bciuszki.jpg?width=1600"
+  },
+  {
+    "title": "Bóg Ojciec – Stań się!",
+    "artist": "Stanisław Wyspiański",
+    "year": 1904,
+    "place": "Kraków, Polska",
+    "lat": 50.0586,
+    "lon": 19.9378,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Wyspia%C5%84ski_-_B%C3%B3g_Ojciec.jpg?width=1600"
+  },
+  {
+    "title": "Portret Lizy Pareńskiej",
+    "artist": "Stanisław Wyspiański",
+    "year": 1904,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Wyspia%C5%84ski_-_Portret_Lizy_Pare%C5%84skiej.jpg?width=1600"
+  },
+  {
+    "title": "Kobiety zbierające kłosy",
+    "artist": "Aleksander Kotsis",
+    "year": 1870,
+    "place": "Kraków / Podgórze, Polska",
+    "lat": 50.045,
+    "lon": 19.95,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Aleksander_Kotsis_-_Kobiety_zbieraj%C4%85ce_k%C5%82osy.jpg?width=1600"
+  },
+  {
+    "title": "Ostatnia chudoba",
+    "artist": "Aleksander Kotsis",
+    "year": 1870,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Aleksander_Kotsis_-_Ostatnia_chudoba.jpg?width=1600"
+  },
+  {
+    "title": "Wiosna – pejzaż z Bronowic",
+    "artist": "Włodzimierz Tetmajer",
+    "year": 1900,
+    "place": "Bronowice (Kraków), Polska",
+    "lat": 50.0833,
+    "lon": 19.8833,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/W%C5%82odzimierz_Tetmajer_-_Wiosna.jpg?width=1600"
+  },
+  {
+    "title": "Procesja w Bronowicach",
+    "artist": "Włodzimierz Tetmajer",
+    "year": 1893,
+    "place": "Bronowice (Kraków), Polska",
+    "lat": 50.0833,
+    "lon": 19.8833,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/W%C5%82odzimierz_Tetmajer_-_Procesja.jpg?width=1600"
+  },
+  {
+    "title": "Polski Termopile (Zadwórze)",
+    "artist": "Stanisław Batowski-Kaczor",
+    "year": 1934,
+    "place": "Lwów / Warszawa, Polska",
+    "lat": 52.2297,
+    "lon": 21.0122,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Stanis%C5%82aw_Batowski_Kaczor_-_Polskie_Termopile.jpg?width=1600"
+  },
+  {
+    "title": "Autoportret w białym fartuchu",
+    "artist": "Olga Boznańska",
+    "year": 1912,
+    "place": "Kraków / Paryż, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Olga_Bozna%C5%84ska_-_Autoportret_(1912).jpg?width=1600"
+  },
+  {
+    "title": "Portret malarza Pawła Naumowa",
+    "artist": "Olga Boznańska",
+    "year": 1893,
+    "place": "Monachium / Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Olga_Bozna%C5%84ska_-_Portret_malarza_Paw%C5%82a_Naumowa.jpg?width=1600"
+  },
+  {
+    "title": "Wesele w Bronowicach",
+    "artist": "Ludwik de Laveaux",
+    "year": 1890,
+    "place": "Bronowice (Kraków), Polska",
+    "lat": 50.0833,
+    "lon": 19.8833,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ludwik_de_Laveaux_-_Wesele.jpg?width=1600"
+  },
+  {
+    "title": "Cmentarz polski na cmentarzu Montmartre",
+    "artist": "Ludwik de Laveaux",
+    "year": 1893,
+    "place": "Paryż / Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Ludwik_de_Laveaux_-_Cmentarz_na_Montmartre.jpg?width=1600"
+  },
+  {
+    "title": "Sobótki",
+    "artist": "Witold Pruszkowski",
+    "year": 1877,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Witold_Pruszkowski_-_Sob%C3%B3tki.jpg?width=1600"
+  },
+  {
+    "title": "Spadająca gwiazda",
+    "artist": "Witold Pruszkowski",
+    "year": 1884,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Witold_Pruszkowski_-_Spadaj%C4%85ca_gwiazda.jpg?width=1600"
+  },
+  {
+    "title": "Eloe z Ellenai",
+    "artist": "Witold Pruszkowski",
+    "year": 1892,
+    "place": "Kraków, Polska",
+    "lat": 50.0647,
+    "lon": 19.945,
+    "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Witold_Pruszkowski_-_Eloe.jpg?width=1600"
+  }
+]

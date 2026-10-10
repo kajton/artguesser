@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="referrer" content="no-referrer">
+<title>flyq.lab — Art Guesser</title>
+<style>html,body,#root{height:100%;margin:0;background:#000;overscroll-behavior:none}</style>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.9/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel" data-presets="react">
+
+const { useState, useEffect, useLayoutEffect, useMemo, useRef, useCallback } = React;
+
+/* Konfiguracja plików z polskimi znakami */
+const COUNTRY_OPTIONS = [
+  { id: "all", name: "Wszystkie kraje 🌍", file: null },
+  { id: "polska", name: "Polska 🇵🇱", file: "data/polska.json" },
+  { id: "wlochy", name: "Wlochy 🇮🇹", file: "data/wlochy.json" },
+  { id: "hiszpania", name: "Hiszpania 🇪🇸", file: "data/hiszpania.json" },
+  { id: "francja", name: "Francja 🇫🇷", file: "data/francja.json" }
+];
+
+/* Ikony inline — bez zewnętrznych zależności */
+const Icon = ({ size = 24, strokeWidth = 2, className = "", children }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">{children}</svg>
+);
+const MapPin = (p) => <Icon {...p}><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></Icon>;
+const Maximize2 = (p) => <Icon {...p}><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" x2="14" y1="3" y2="10"/><line x1="3" x2="10" y1="21" y2="14"/></Icon>;
+const Minimize2 = (p) => <Icon {...p}><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" x2="21" y1="10" y2="3"/><line x1="3" x2="10" y1="21" y2="14"/></Icon>;
+const X = (p) => <Icon {...p}><path d="M18 6 6 18"/><path d="m6 6 12 12"/></Icon>;
+const Copy = (p) => <Icon {...p}><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></Icon>;
+const Check = (p) => <Icon {...p}><path d="M20 6 9 17l-5-5"/></Icon>;
+const Globe2 = (p) => <Icon {...p}><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></Icon>;
+const Share2 = (p) => <Icon {...p}><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" x2="15.42" y1="13.51" y2="17.49"/><line x1="15.42" x2="8.59" y1="6.51" y2="10.49"/></Icon>;
+const Palette = (p) => <Icon {...p}><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></Icon>;
+const ArrowRight = (p) => <Icon {...p}><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></Icon>;
+const ChevronDown = (p) => <Icon {...p}><polyline points="6 9 12 15 18 9"/></Icon>;
+
+const MIN_YEAR = 1200;
+const MAX_YEAR = 2024;
+
+const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+const haversine = (a, b) => {
+  const R = 6371, rad = (d) => (d * Math.PI) / 180;
+  const dLat = rad(b.lat - a.lat), dLon = rad(b.lon - a.lon);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLon / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+};
+const yearScore = (diff) => Math.round(2500 * Math.exp(-diff / 60));
+const placeScore = (km) => Math.round(2500 * Math.exp(-km / 1500));
+const fmt = (n) => n.toLocaleString("pl-PL");
+const blocks = (s) => { const n = Math.round((s / 2500) * 5); return "🟩".repeat(n) + "⬛".repeat(5 - n); };
+const verdict = (t) =>
+  t >= 4600 ? "Perfekcyjnie" : t >= 3500 ? "Znawca" : t >= 2200 ? "Całkiem blisko" : t >= 1000 ? "Dobra próba" : "Następnym razem";
+const era = (y) =>
+  y < 1400 ? "Średniowiecze" : y < 1600 ? "Renesans" : y < 1750 ? "Barok" : y < 1850 ? "Klasycyzm i romantyzm"
+  : y < 1900 ? "Realizm i impresjonizm" : y < 1945 ? "Modernizm" : "Sztuka współczesna";
+const coord = (p) =>
+  `${Math.abs(p.lat).toFixed(0)}°${p.lat >= 0 ? "N" : "S"} ${Math.abs(p.lon).toFixed(0)}°${p.lon >= 0 ? "E" : "W"}`;
+
+const rubberband = (o, d, c = 0.55) => (o * d * c) / (d + c * Math.abs(o));
+const project = (v, rate = 0.998) => ((v / 1000) * rate) / (1 - rate);
+const prefersReduced = () =>
+  typeof window !== "undefined" && !!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+
+function useSpring(initial, onUpdate, opts = {}) {
+  const cb = useRef(onUpdate);
+  cb.current = onUpdate;
+  const ctl = useRef(null);
+  if (!ctl.current) {
+    const D0 = opts.damping ?? 1, R0 = opts.response ?? 0.4, eps = opts.eps ?? 0.01;
+    const s = { x: initial, v: 0, t: initial, raf: 0, last: 0, rest: null, d: D0, r: R0 };
+    const stop = () => { cancelAnimationFrame(s.raf); s.raf = 0; };
+    const tick = (now) => {
+      const dt = Math.min((now - s.last) / 1000, 1 / 30);
+      s.last = now;
+      const w = (2 * Math.PI) / s.r, k = w * w, c = 2 * s.d * w, n = 4, h = dt / n;
+      for (let i = 0; i < n; i++) { s.v += (-k * (s.x - s.t) - c * s.v) * h; s.x += s.v * h; }
+      if (Math.abs(s.x - s.t) < eps && Math.abs(s.v) < eps * 5) {
+        s.x = s.t; s.v = 0; s.raf = 0; cb.current(s.x);
+        const r = s.rest; s.rest = null; r && r();
+      } else { cb.current(s.x); s.raf = requestAnimationFrame(tick); }
+    };
+    ctl.current = {
+      get: () => s.x,
+      stop,
+      set: (x) => { stop(); s.x = x; s.t = x; s.v = 0; s.rest = null; cb.current(x); },
+      to: (t, o = {}) => {
+        if (prefersReduced()) { const r = o.onRest; ctl.current.set(t); r && r(); return; }
+        s.t = t;
+        if (o.velocity !== undefined) s.v = o.velocity;
+        s.d = o.damping ?? D0; s.r = o.response ?? R0; s.rest = o.onRest ?? null;
+        if (!s.raf) { s.last = performance.now(); s.raf = requestAnimationFrame(tick); }
+      },
+    };
+  }
+  useEffect(() => () => ctl.current.stop(), []);
+  return ctl.current;
+}
+
+const velocityOf = (hist) => {
+  if (hist.length < 2) return 0;
+  const last = hist[hist.length - 1], now = last.t;
+  const ref = hist.find((h) => now - h.t < 100) ?? hist[0];
+  return last.t > ref.t ? ((last.v - ref.v) / (last.t - ref.t)) * 1000 : 0;
+};
+
+function useCountUp(target, run, ms = 1100) {
+  const [v, setV] = useState(0);
+  useEffect(() => {
+    if (!run) return setV(0);
+    if (prefersReduced()) return setV(target);
+    let raf, t0;
+    const tick = (t) => {
+      t0 ??= t;
+      const p = Math.min((t - t0) / ms, 1);
+      setV(Math.round(target * (1 - Math.pow(1 - p, 4))));
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, run, ms]);
+  return v;
+}
+
+const CSS = `
+.dag { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", system-ui, sans-serif; -webkit-font-smoothing: antialiased; font-optical-sizing: auto; }
+.dag :focus-visible { outline: 2px solid #0A84FF; outline-offset: 2px; }
+.dag .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+
+.dag .t-score    { font-size: clamp(3.75rem, 16vw, 4.75rem); line-height: 1;    letter-spacing: -0.045em; font-weight: 600; }
+.dag .t-year     { font-size: clamp(2.5rem, 9vw, 3.25rem);  line-height: 1;    letter-spacing: -0.04em;  font-weight: 600; }
+.dag .t-title    { font-size: 1.75rem;   line-height: 1.1;  letter-spacing: -0.025em; font-weight: 700; }
+.dag .t-metric   { font-size: 1.75rem;   line-height: 1.1;  letter-spacing: -0.025em; font-weight: 600; }
+.dag .t-headline { font-size: 1.0625rem; line-height: 1.3;  letter-spacing: -0.014em; font-weight: 600; }
+.dag .t-body     { font-size: 0.9375rem; line-height: 1.45; letter-spacing: -0.006em; }
+.dag .t-label    { font-size: 0.8125rem; line-height: 1.3;  letter-spacing: 0.006em;  font-weight: 500; }
+.dag .t-micro    { font-size: 0.75rem;   line-height: 1.3;  letter-spacing: 0.015em;  font-weight: 500; }
+
+.dag .glass { --blur: 28px; background: rgba(28,28,30,.66); backdrop-filter: blur(var(--blur)) saturate(180%); -webkit-backdrop-filter: blur(var(--blur)) saturate(180%); border: 1px solid rgba(255,255,255,.1); border-top-color: rgba(255,255,255,.24); }
+.dag .glass-thick { --blur: 44px; background: rgba(28,28,30,.82); }
+.dag .glass-chip { --blur: 16px; background: rgba(60,60,62,.5); }
+
+.dag .press { transition: transform .1s ease-out, background-color .2s ease, box-shadow .2s ease; }
+.dag .press:active:not(:disabled) { transform: scale(.97); }
+
+@keyframes dag-pop  { 0% { transform: scale(.2); opacity: 0 } 70% { transform: scale(1.15) } 100% { transform: scale(1); opacity: 1 } }
+@keyframes dag-fade { from { opacity: 0 } to { opacity: 1 } }
+@keyframes dag-draw { to { stroke-dashoffset: 0 } }
+.dag .pin-in { transform-origin: 50% 100%; animation: dag-pop .35s cubic-bezier(.2,.9,.3,1.3) backwards; }
+.dag .pin-lift { transition: transform .12s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dag *, .dag *::before { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .dag .glass { background: #1c1c1e; backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+@media (prefers-contrast: more) {
+  .dag .glass { background: #1c1c1e; border-color: rgba(255,255,255,.5); }
+}
+`;
+
+const LAND = [
+  [[-168,66],[-156,71],[-125,70],[-95,72],[-82,69],[-62,60],[-56,52],[-66,44],[-76,35],[-81,25],[-90,29],[-97,26],[-97,20],[-90,16],[-83,9],[-79,8],[-86,13],[-95,16],[-105,20],[-112,29],[-117,32],[-124,40],[-124,48],[-135,58],[-150,60],[-165,60]],
+  [[-78,8],[-62,10],[-50,0],[-35,-6],[-40,-22],[-48,-28],[-58,-38],[-65,-42],[-68,-52],[-74,-50],[-72,-30],[-70,-18],[-81,-6],[-80,0]],
+  [[-10,36],[-9,43],[-1,46],[-5,48],[5,53],[8,57],[10,59],[5,62],[15,69],[30,71],[60,69],[80,73],[110,77],[140,72],[170,70],[180,66],[160,60],[142,52],[140,44],[128,38],[122,30],[120,22],[108,18],[106,10],[100,2],[98,15],[92,22],[80,14],[77,8],[72,20],[67,25],[57,25],[50,30],[56,18],[44,12],[35,28],[34,32],[27,37],[20,40],[12,38],[8,44],[3,43],[-5,36]],
+  [[-17,21],[-10,30],[-6,36],[10,37],[20,32],[32,31],[34,28],[43,12],[51,12],[40,-2],[40,-15],[33,-26],[20,-35],[14,-28],[12,-6],[9,4],[-8,4],[-17,14]],
+  [[114,-22],[122,-18],[136,-12],[142,-11],[153,-26],[150,-37],[140,-38],[130,-32],[115,-34]],
+  [[-55,60],[-45,60],[-20,70],[-20,80],[-60,82],[-70,76]],
+  [[-5,50],[2,52],[-2,58],[-6,57]],
+  [[130,31],[140,36],[142,44],[138,38]],
+];
+const pts = (poly) => poly.map(([lo, la]) => `${lo + 180},${90 - la}`).join(" ");
+const pct = (lon, lat) => ({ left: `${((lon + 180) / 360) * 100}%`, top: `${((90 - lat) / 180) * 100}%` });
+
+function WorldMap({ guess, answer, onPick, interactive = true, className = "" }) {
+  const ref = useRef(null);
+  const [drag, setDrag] = useState(false);
+  const pick = (e) => {
+    const r = ref.current.getBoundingClientRect();
+    onPick({
+      lon: clamp(((e.clientX - r.left) / r.width) * 360 - 180, -180, 180),
+      lat: clamp(90 - ((e.clientY - r.top) / r.height) * 180, -85, 85),
+    });
+  };
+  const handlers = interactive && onPick ? {
+    onPointerDown: (e) => { e.currentTarget.setPointerCapture(e.pointerId); setDrag(true); pick(e); },
+    onPointerMove: (e) => drag && pick(e),
+    onPointerUp: () => setDrag(false),
+    onPointerCancel: () => setDrag(false),
+  } : {};
+  return (
+    <div ref={ref} {...handlers}
+      className={`relative aspect-[2/1] w-full touch-none select-none overflow-hidden rounded-2xl bg-[#0b0b0d] ring-1 ring-inset ring-white/10 ${interactive ? "cursor-crosshair" : ""} ${className}`}>
+      <svg viewBox="0 0 360 180" className="absolute inset-0 h-full w-full" aria-hidden>
+        {[...Array(11)].map((_, i) => <line key={"v" + i} x1={i * 36} x2={i * 36} y1="0" y2="180" stroke="rgba(255,255,255,.05)" strokeWidth="0.4" />)}
+        {[...Array(5)].map((_, i) => <line key={"h" + i} y1={(i + 1) * 30} y2={(i + 1) * 30} x1="0" x2="360" stroke="rgba(255,255,255,.05)" strokeWidth="0.4" />)}
+        {LAND.map((p, i) => <polygon key={i} points={pts(p)} fill="rgba(255,255,255,.1)" stroke="rgba(255,255,255,.18)" strokeWidth="0.4" strokeLinejoin="round" />)}
+        {guess && answer && (
+          <line x1={guess.lon + 180} y1={90 - guess.lat} x2={answer.lon + 180} y2={90 - answer.lat}
+            stroke="#fff" strokeWidth="1.2" strokeLinecap="round" vectorEffect="non-scaling-stroke" pathLength="1"
+            style={{ strokeDasharray: 1, strokeDashoffset: 1, animation: "dag-draw .9s .3s ease forwards" }} />
+        )}
+      </svg>
+      {answer && (
+        <div className="absolute" style={{ ...pct(answer.lon, answer.lat), transform: "translate(-50%,-50%)" }}>
+          <div className="pin-in grid h-6 w-6 place-items-center rounded-full bg-[#30D158] shadow-[0_0_0_4px_rgba(48,209,88,.25)]" style={{ animationDelay: ".5s" }}>
+            <Palette size={12} className="text-black" strokeWidth={2.5} />
+          </div>
+        </div>
+      )}
+      {guess && (
+        <div className="absolute" style={{ ...pct(guess.lon, guess.lat), transform: "translate(-50%,-100%)" }}>
+          <div className="pin-in">
+            <div className="pin-lift" style={{ transform: drag ? "translateY(-10px) scale(1.12)" : "none", transformOrigin: "50% 100%" }}>
+              <MapPin size={30} className="fill-[#0A84FF] text-white drop-shadow-[0_3px_6px_rgba(0,0,0,.6)]" strokeWidth={1.6} />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function YearSlider({ value, onChange, disabled }) {
+  const trackRef = useRef(null), thumbRef = useRef(null), fillRef = useRef(null);
+  const frac = (value - MIN_YEAR) / (MAX_YEAR - MIN_YEAR);
+  const fracRef = useRef(frac); fracRef.current = frac;
+  const drag = useRef(null);
+
+  const paint = () => {
+    const th = thumbRef.current, fill = fillRef.current;
+    if (!th || !fill) return;
+    const o = over.get(), s = press.get();
+    th.style.transform = `translate3d(calc(-50% + ${o}px), -50%, 0) scale(${s})`;
+    fill.style.width = `calc(${fracRef.current * 100}% + ${Math.max(o, 0)}px)`;
+  };
+  const over = useSpring(0, paint, { damping: 0.8, response: 0.35, eps: 0.05 });
+  const press = useSpring(1, paint, { damping: 1, response: 0.2, eps: 0.0005 });
+  useLayoutEffect(paint, [value]);
+
+  const fromX = (clientX) => {
+    const d = drag.current, W = d.rect.width;
+    const x = clientX - d.rect.left - d.grab;
+    const f = x / W;
+    over.set(f < 0 ? -rubberband(-x, 56) : f > 1 ? rubberband(x - W, 56) : 0);
+    onChange(Math.round(MIN_YEAR + clamp(f, 0, 1) * (MAX_YEAR - MIN_YEAR)));
+  };
+  const down = (e) => {
+    if (disabled) return;
+    e.currentTarget.setPointerCapture(e.pointerId);
+    const rect = trackRef.current.getBoundingClientRect();
+    const center = rect.left + fracRef.current * rect.width;
+    const onThumb = Math.abs(e.clientX - center) < 24;
+    drag.current = { rect, grab: onThumb ? e.clientX - center : 0 };
+    press.to(1.18);
+    fromX(e.clientX);
+  };
+  const move = (e) => drag.current && fromX(e.clientX);
+  const up = () => {
+    if (!drag.current) return;
+    drag.current = null;
+    press.to(1);
+    over.to(0);
+  };
+  const key = (e) => {
+    if (disabled) return;
+    const big = e.shiftKey ? 10 : 1;
+    const map = { ArrowLeft: -1 * big, ArrowDown: -1 * big, ArrowRight: big, ArrowUp: big, PageUp: 50, PageDown: -50 };
+    let next = null;
+    if (e.key in map) next = value + map[e.key];
+    else if (e.key === "Home") next = MIN_YEAR;
+    else if (e.key === "End") next = MAX_YEAR;
+    if (next === null) return;
+    e.preventDefault();
+    if (next < MIN_YEAR || next > MAX_YEAR) { over.set(next < MIN_YEAR ? -10 : 10); over.to(0); }
+    onChange(clamp(next, MIN_YEAR, MAX_YEAR));
+  };
+
+  return (
+    <div ref={trackRef} role="slider" tabIndex={disabled ? -1 : 0} aria-label="Rok powstania"
+      aria-valuemin={MIN_YEAR} aria-valuemax={MAX_YEAR} aria-valuenow={value} aria-valuetext={`${value}, ${era(value)}`}
+      onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up} onKeyDown={key}
+      className={`relative h-11 w-full touch-none select-none rounded-full ${disabled ? "opacity-50" : "cursor-pointer"}`}>
+      <div className="absolute inset-x-0 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-white/20" />
+      <div ref={fillRef} className="absolute left-0 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-[#0A84FF]" />
+      <div ref={thumbRef} className="absolute top-1/2 h-7 w-7 rounded-full bg-white shadow-[0_2px_10px_rgba(0,0,0,.5),0_0_0_.5px_rgba(0,0,0,.1)]"
+        style={{ left: `${frac * 100}%` }} />
+    </div>
+  );
+}
+
+function Lightbox({ art, origin, onClose }) {
+  const scrimRef = useRef(null), wrapRef = useRef(null), imgRef = useRef(null);
+  const drag = useRef(null);
+
+  const paint = () => {
+    const p = open.get(), x = sx.get(), y = sy.get();
+    const dist = Math.hypot(x, y), s = 1 - Math.min(dist / 900, 0.3);
+    if (wrapRef.current) {
+      wrapRef.current.style.transform = `scale(${0.25 + 0.75 * clamp(p, 0, 1.05)})`;
+      wrapRef.current.style.opacity = clamp(p * 1.6, 0, 1);
+    }
+    if (imgRef.current) imgRef.current.style.transform = `translate3d(${x}px,${y}px,0) scale(${s})`;
+    if (scrimRef.current) scrimRef.current.style.opacity = clamp(p, 0, 1) * (1 - Math.min(dist / 500, 0.8));
+  };
+  const open = useSpring(0, paint, { damping: 1, response: 0.42, eps: 0.0005 });
+  const sx = useSpring(0, paint, { damping: 1, response: 0.4 });
+  const sy = useSpring(0, paint, { damping: 1, response: 0.4 });
+
+  useLayoutEffect(() => { open.set(0); }, []);
+  useEffect(() => { open.to(1); }, []);
+
+  const close = (v = { x: 0, y: 0 }) => {
+    sx.to(0, { velocity: v.x }); sy.to(0, { velocity: v.y });
+    open.to(0, { onRest: onClose });
+  };
+  useEffect(() => {
+    const k = (e) => e.key === "Escape" && close();
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
+  });
+
+  const down = (e) => {
+    e.currentTarget.setPointerCapture(e.pointerId);
+    sx.stop(); sy.stop();
+    drag.current = { x0: e.clientX, y0: e.clientY, bx: sx.get(), by: sy.get(), active: false, hx: [], hy: [] };
+  };
+  const move = (e) => {
+    const d = drag.current; if (!d) return;
+    if (!d.active) {
+      if (Math.hypot(e.clientX - d.x0, e.clientY - d.y0) < 8) return;
+      d.active = true; d.x0 = e.clientX; d.y0 = e.clientY;
+    }
+    const t = performance.now();
+    const x = d.bx + e.clientX - d.x0, y = d.by + e.clientY - d.y0;
+    sx.set(x); sy.set(y);
+    d.hx = [...d.hx, { t, v: x }].slice(-6); d.hy = [...d.hy, { t, v: y }].slice(-6);
+  };
+  const up = () => {
+    const d = drag.current; if (!d) return; drag.current = null;
+    if (!d.active) return close();
+    const vx = velocityOf(d.hx), vy = velocityOf(d.hy);
+    const px = sx.get() + project(vx), py = sy.get() + project(vy);
+    if (Math.hypot(px, py) > 160) close({ x: vx, y: vy });
+    else { sx.to(0, { velocity: vx, damping: 0.8, response: 0.3 }); sy.to(0, { velocity: vy, damping: 0.8, response: 0.3 }); }
+  };
+
+  return (
+    <div className="fixed inset-0 z-50" role="dialog" aria-modal="true" aria-label="Podgląd obrazu">
+      <div ref={scrimRef} onClick={() => close()} className="absolute inset-0 bg-black/95" style={{ opacity: 0 }} />
+      <div ref={wrapRef} className="pointer-events-none absolute inset-0 grid place-items-center p-4"
+        style={{ transformOrigin: `${origin.x}px ${origin.y}px`, opacity: 0, transform: "scale(.25)" }}>
+        <img ref={imgRef} src={art.img} alt="Dzieło sztuki do odgadnięcia" draggable={false}
+          onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}
+          className="pointer-events-auto max-h-[92vh] max-w-[96vw] touch-none select-none rounded-2xl object-contain shadow-2xl will-change-transform" />
+      </div>
+      <button onClick={() => close()} aria-label="Zamknij"
+        className="press glass glass-chip absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full text-white hover:bg-white/20">
+        <X size={20} />
+      </button>
+    </div>
+  );
+}
+
+function YearTrack({ guess, answer }) {
+  const p = (y) => ((y - MIN_YEAR) / (MAX_YEAR - MIN_YEAR)) * 100;
+  const a = p(answer), g = p(guess);
+  return (
+    <div className="relative mt-3 h-10">
+      <div className="absolute left-0 right-0 top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-white/10" />
+      <div className="absolute top-1/2 h-1.5 -translate-y-1/2 rounded-full bg-white/70" style={{ left: `${Math.min(a, g)}%`, width: `${Math.abs(a - g)}%` }} />
+      <div className="absolute top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0A84FF] ring-4 ring-[#0A84FF]/25" style={{ left: `${g}%` }} />
+      <div className="absolute top-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#30D158] ring-4 ring-[#30D158]/25" style={{ left: `${a}%` }} />
+    </div>
+  );
+}
+function ScoreBar({ value, max, color = "#0A84FF", run }) {
+  return (
+    <div className="h-2 w-full overflow-hidden rounded-full bg-white/10">
+      <div className="h-full rounded-full transition-[width] duration-[1100ms] ease-out" style={{ width: run ? `${(value / max) * 100}%` : "0%", background: color }} />
+    </div>
+  );
+}
+
+function ResultModal({ art, guess, puzzleNo, onClose, onNext, onProgress }) {
+  const sheetRef = useRef(null), scrimRef = useRef(null), dragRef = useRef(null);
+  const [run, setRun] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const offscreen = () => (sheetRef.current?.offsetHeight ?? 700) + 48;
+  const paint = (y) => {
+    if (sheetRef.current) sheetRef.current.style.transform = `translate3d(0,${y}px,0)`;
+    const p = 1 - clamp(y / offscreen(), 0, 1);
+    if (scrimRef.current) scrimRef.current.style.opacity = p;
+    onProgress?.(p);
+  };
+  const sheet = useSpring(1000, paint, { damping: 1, response: 0.42 });
+
+  useLayoutEffect(() => { sheet.set(offscreen()); }, []);
+  useEffect(() => {
+    sheet.to(0);
+    const t = setTimeout(() => setRun(true), 250);
+    navigator.vibrate?.(12);
+    return () => { clearTimeout(t); sheet.stop(); onProgress?.(0); };
+  }, []);
+
+  const dismiss = (velocity, callback) => {
+    sheet.to(offscreen(), { velocity, response: 0.3, onRest: callback || onClose });
+  };
+
+  useEffect(() => {
+    const k = (e) => e.key === "Escape" && dismiss(0);
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
+  });
+
+  const down = (e) => {
+    e.currentTarget.setPointerCapture(e.pointerId);
+    sheet.stop();
+    dragRef.current = { y0: e.clientY, s0: sheet.get(), active: false, hist: [] };
+  };
+  const move = (e) => {
+    const d = dragRef.current; if (!d) return;
+    if (!d.active) {
+      if (Math.abs(e.clientY - d.y0) < 6) return;
+      d.active = true; d.x0 = e.clientY; d.y0 = e.clientY;
+    }
+    const raw = d.s0 + (e.clientY - d.y0);
+    const y = raw < 0 ? -rubberband(-raw, 120) : raw;
+    sheet.set(y);
+    d.hist = [...d.hist, { t: performance.now(), v: y }].slice(-6);
+  };
+  const up = () => {
+    const d = dragRef.current; if (!d) return; dragRef.current = null;
+    if (!d.active) return sheet.to(0);
+    const v = velocityOf(d.hist);
+    const projected = sheet.get() + project(v);
+    if (projected > sheetRef.current.offsetHeight * 0.4) dismiss(v);
+    else sheet.to(0, { velocity: v, damping: 0.8, response: 0.3 });
+  };
+
+  const diff = Math.abs(guess.year - art.year);
+  const km = Math.round(haversine(guess, art));
+  const ys = yearScore(diff), ps = placeScore(km), total = ys + ps;
+  const shown = useCountUp(total, run);
+
+  const text = [
+    `flyq.lab — Art Guesser #${puzzleNo}`,
+    `🎨 ${fmt(total)} / 5 000`,
+    `📅 ${blocks(ys)}  ±${diff} ${diff === 1 ? "rok" : "lat"}`,
+    `📍 ${blocks(ps)}  ${fmt(km)} km`,
+  ].join("\n");
+
+  const copy = async () => {
+    try { await navigator.clipboard.writeText(text); }
+    catch { const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); ta.remove(); }
+    navigator.vibrate?.(10);
+    setCopied(true); setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <div className="fixed inset-0 z-40 flex items-end justify-center" role="dialog" aria-modal="true" aria-label="Wynik">
+      <div ref={scrimRef} onClick={() => dismiss(0)} className="absolute inset-0 bg-black/60" style={{ opacity: 0 }} />
+      <div ref={sheetRef}
+        className="glass glass-thick relative flex max-h-[92dvh] w-full max-w-lg flex-col rounded-t-[32px] shadow-[0_-20px_80px_rgba(0,0,0,.7)] will-change-transform sm:mb-6 sm:rounded-[32px]">
+        <div onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}
+          className="flex h-9 shrink-0 cursor-grab touch-none items-center justify-center active:cursor-grabbing" aria-label="Przeciągnij w dół, aby zamknąć">
+          <div className="h-1.5 w-10 rounded-full bg-white/30" />
+        </div>
+        <button onClick={() => dismiss(0)} aria-label="Zamknij"
+          className="press absolute right-4 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white/80 hover:bg-white/20 hover:text-white">
+          <X size={16} />
+        </button>
+
+        <div className="overflow-y-auto overscroll-contain px-6 pb-6 pt-1 sm:px-8 sm:pb-8 [mask-image:linear-gradient(to_bottom,transparent,black_14px)]">
+          <div className="pt-3 text-center">
+            <p className="t-label text-white/70">{verdict(total)}</p>
+            <p className="t-score num mt-1 text-white">{fmt(shown)}</p>
+            <p className="t-label mt-2 text-white/60">z 5 000 punktów</p>
+            <div className="mt-5"><ScoreBar value={total} max={5000} run={run} color="linear-gradient(90deg,#0A84FF,#64D2FF)" /></div>
+          </div>
+
+          <section className="mt-7 rounded-2xl bg-[#2c2c2e] p-4 ring-1 ring-inset ring-white/10">
+            <div className="flex items-baseline justify-between">
+              <h3 className="t-headline text-white">Rok</h3>
+              <span className="t-body num text-white/70">{fmt(ys)} / 2 500</span>
+            </div>
+            <p className="t-metric num mt-1 text-white">
+              {diff === 0 ? "Trafiony" : <>±{fmt(diff)} <span className="t-headline font-medium text-white/65">{diff === 1 ? "rok" : "lat różnicy"}</span></>}
+            </p>
+            <YearTrack guess={guess.year} answer={art.year} />
+            <div className="t-label num flex justify-between">
+              <span className="text-[#64B5FF]">Twój typ {guess.year}</span>
+              <span className="text-[#30D158]">Prawda {art.year}</span>
+            </div>
+            <div className="mt-3"><ScoreBar value={ys} max={2500} run={run} color="#0A84FF" /></div>
+          </section>
+
+          <section className="mt-3 rounded-2xl bg-[#2c2c2e] p-4 ring-1 ring-inset ring-white/10">
+            <div className="flex items-baseline justify-between">
+              <h3 className="t-headline text-white">Miejsce</h3>
+              <span className="t-body num text-white/70">{fmt(ps)} / 2 500</span>
+            </div>
+            <p className="t-metric num mt-1 text-white">{fmt(km)} <span className="t-headline font-medium text-white/65">km od celu</span></p>
+            <div className="mt-3"><WorldMap guess={guess} answer={art} interactive={false} /></div>
+            <div className="mt-3"><ScoreBar value={ps} max={2500} run={run} color="#30D158" /></div>
+          </section>
+
+          <div className="mt-5 text-center">
+            <p className="t-headline text-white">{art.title}</p>
+            <p className="t-body text-white/70">{art.artist}, {art.year}, {art.place}</p>
+          </div>
+
+          <pre className="t-body num mt-5 whitespace-pre-wrap rounded-2xl bg-black/40 p-4 text-center font-[inherit] leading-relaxed text-white/85 ring-1 ring-inset ring-white/10">{text}</pre>
+          
+          <div className="mt-4 flex flex-col gap-2.5">
+            <button onClick={() => dismiss(0, onNext)}
+              className="press t-headline flex h-14 w-full items-center justify-center gap-2 rounded-2xl bg-[#0A84FF] text-white shadow-[0_8px_24px_rgba(10,132,255,.35)] hover:bg-[#2b95ff]">
+              Następna zagadka <ArrowRight size={20} />
+            </button>
+            <button onClick={copy}
+              className={`press t-headline flex h-12 w-full items-center justify-center gap-2 rounded-2xl ${copied ? "bg-[#30D158] text-black" : "bg-white/10 text-white/90 hover:bg-white/15"}`}>
+              {copied ? <><Check size={18} /> Skopiowano</> : <><Copy size={18} /> Kopiuj wynik</>}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function DailyArtGuesser() {
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [artworks, setArtworks] = useState([]);
+  const [artIndex, setArtIndex] = useState(0);
+  const [puzzleCount, setPuzzleCount] = useState(1);
+  const [loading, setLoading] = useState(true);
+
+  const [year, setYear] = useState(1650);
+  const [pin, setPin] = useState(null);
+  const [mapOpen, setMapOpen] = useState(false);
+  const [mapMounted, setMapMounted] = useState(false);
+  const [lb, setLb] = useState(null);
+  const [done, setDone] = useState(false);
+  const [showResult, setShowResult] = useState(false);
+  const [imgOk, setImgOk] = useState(true);
+
+  const dropdownRef = useRef(null);
+
+  /* Zamknięcie dropdowna po kliknięciu poza niego */
+  useEffect(() => {
+    const handleOutsideClick = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    window.addEventListener("pointerdown", handleOutsideClick);
+    return () => window.removeEventListener("pointerdown", handleOutsideClick);
+  }, []);
+
+  /* Wczytywanie plików JSON zgodnie ze schematem użytkownika */
+  useEffect(() => {
+    setLoading(true);
+    const loadData = async () => {
+      try {
+        let loaded = [];
+        if (selectedCategory === "all") {
+          const files = COUNTRY_OPTIONS.filter((c) => c.file).map((c) => c.file);
+          const responses = await Promise.all(files.map((f) => fetch(f).then((r) => r.ok ? r.json() : [])));
+          loaded = responses.flat();
+        } else {
+          const target = COUNTRY_OPTIONS.find((c) => c.id === selectedCategory);
+          if (target && target.file) {
+            const res = await fetch(target.file);
+            if (res.ok) loaded = await res.json();
+          }
+        }
+        const shuffled = [...loaded].sort(() => 0.5 - Math.random());
+        setArtworks(shuffled);
+        setArtIndex(0);
+      } catch (e) {
+        console.error("Błąd podczas ładowania JSON:", e);
+        setArtworks([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadData();
+  }, [selectedCategory]);
+
+  const art = artworks[artIndex];
+
+  useEffect(() => {
+    setImgOk(true);
+  }, [artIndex, artworks]);
+
+  const nextPuzzle = useCallback(() => {
+    setShowResult(false);
+    setDone(false);
+    setPin(null);
+    setYear(1650);
+    setMapOpen(false);
+    setArtIndex((prev) => (prev + 1) % artworks.length);
+    setPuzzleCount((c) => c + 1);
+  }, [artworks.length]);
+
+  const stageRef = useRef(null), panelRef = useRef(null), dockRef = useRef(null), thumbRef = useRef(null);
+  const ready = pin !== null;
+
+  const recede = useCallback((p) => {
+    const el = stageRef.current; if (!el) return;
+    el.style.transform = p > 0.001 ? `scale(${1 - 0.05 * p})` : "";
+    el.style.borderRadius = `${40 * p}px`;
+  }, []);
+
+  const paintMap = (p) => {
+    const el = panelRef.current; if (!el) return;
+    el.style.opacity = clamp(p * 1.5, 0, 1);
+    el.style.transform = `scale(${0.55 + 0.45 * clamp(p, 0, 1.02)})`;
+    el.style.setProperty("--blur", `${28 * clamp(p, 0, 1)}px`);
+    el.style.pointerEvents = p > 0.6 ? "auto" : "none";
+  };
+  const mapSpring = useSpring(0, paintMap, { damping: 1, response: 0.36, eps: 0.0005 });
+
+  useLayoutEffect(() => {
+    if (mapOpen) {
+      const p = panelRef.current, w = dockRef.current, t = thumbRef.current;
+      if (p && w && t) {
+        const wr = w.getBoundingClientRect(), tr = t.getBoundingClientRect();
+        const ox = tr.left + tr.width / 2 - (wr.right - p.offsetWidth);
+        const oy = p.offsetHeight + 12 + (tr.top + tr.height / 2 - wr.top);
+        p.style.transformOrigin = `${ox}px ${oy}px`;
+      }
+      paintMap(mapSpring.get());
+      mapSpring.to(1);
+    } else if (mapMounted) {
+      mapSpring.to(0, { onRest: () => setMapMounted(false) });
+    }
+  }, [mapOpen]);
+
+  const toggleMap = () => { if (done) return; if (!mapOpen) setMapMounted(true); setMapOpen((o) => !o); };
+
+  const submit = () => {
+    if (!ready) { if (!mapOpen) toggleMap(); return; }
+    navigator.vibrate?.(12);
+    setMapOpen(false); setDone(true); setShowResult(true);
+  };
+
+  useEffect(() => {
+    const k = (e) => e.key === "Escape" && setMapOpen(false);
+    window.addEventListener("keydown", k);
+    return () => window.removeEventListener("keydown", k);
+  }, []);
+
+  const currentCategoryName = COUNTRY_OPTIONS.find((c) => c.id === selectedCategory)?.name || "Kraj";
+
+  return (
+    <div className="dag relative h-[100dvh] w-full overflow-hidden bg-black text-white">
+      <style>{CSS}</style>
+
+      <div ref={stageRef} className="absolute inset-0 overflow-hidden bg-black will-change-transform">
+        {/* HERO */}
+        <main className="absolute inset-0 pb-[11.5rem] pt-24 sm:pb-[10rem]">
+          <div className="group relative mx-auto h-full w-full max-w-6xl px-4 sm:px-8">
+            <div className="relative h-full overflow-hidden rounded-[28px] bg-[#111113] shadow-[0_30px_80px_rgba(0,0,0,.7)] ring-1 ring-white/10">
+              {loading ? (
+                <div className="grid h-full place-items-center text-white/50">
+                  <div className="text-center animate-pulse"><Palette className="mx-auto mb-3" size={40} /><p className="t-body">Ładowanie dzieł...</p></div>
+                </div>
+              ) : artworks.length === 0 ? (
+                <div className="grid h-full place-items-center text-center p-6 text-white/60">
+                  <div>
+                    <p className="t-headline mb-2 text-white">Brak dzieł sztuki</p>
+                    <p className="t-body">Upewnij się, że plik JSON istnieje w folderze <code>data/</code>.</p>
+                  </div>
+                </div>
+              ) : imgOk ? (
+                <img
+                  key={art.img}
+                  src={art.img}
+                  alt="Dzieło sztuki do odgadnięcia"
+                  draggable={false}
+                  onError={(e) => {
+                    if (!e.currentTarget.dataset.retried) {
+                      e.currentTarget.dataset.retried = "true";
+                      e.currentTarget.src = `https://wsrv.nl/?url=${encodeURIComponent(art.img)}&output=webp`;
+                      return;
+                    }
+                    console.warn("Pominięto niedostępny obraz:", art.title);
+                    nextPuzzle();
+                  }}
+                  className="h-full w-full object-contain p-3 transition-transform duration-[900ms] ease-out group-hover:scale-[1.04] sm:p-6"
+                />
+              ) : (
+                <div className="grid h-full place-items-center bg-gradient-to-br from-[#1c1c1e] to-[#0a0a0c] text-white/60">
+                  <div className="max-w-md px-6 text-center">
+                    <div className="mb-4 flex justify-center"><Palette className="text-white/70" size={42} /></div>
+                    <p className="t-headline mb-2 text-white">Obraz niedostępny</p>
+                    <p className="t-body text-white/70">{art?.title || "Dzieło sztuki"}</p>
+                    <p className="t-body mt-1 text-white/50">{art?.artist || "Artysta nieznany"}</p>
+                  </div>
+                </div>
+              )}
+              {art && (
+                <button aria-label="Powiększ obraz"
+                  onClick={(e) => { const r = e.currentTarget.getBoundingClientRect(); setLb({ x: r.left + r.width / 2, y: r.top + r.height / 2 }); }}
+                  className="press glass glass-chip absolute bottom-4 right-4 grid h-11 w-11 place-items-center rounded-full text-white hover:bg-white/20">
+                  <Maximize2 size={18} />
+                </button>
+              )}
+            </div>
+          </div>
+        </main>
+
+        {/* Scroll-edge gradient overlay */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-32 bg-gradient-to-b from-black/85 via-black/40 to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-48 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+
+        {/* HEADER */}
+        <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center justify-between p-6 sm:px-10">
+          <div className="pointer-events-auto select-none">
+            <span className="text-[1.35rem] font-medium tracking-tight text-white/95 sm:text-[1.5rem]">
+              flyq<span className="text-[#0A84FF]">.</span>lab
+            </span>
+          </div>
+
+          <div className="pointer-events-auto flex items-center gap-3">
+            {done && (
+              <button onClick={() => setShowResult(true)}
+                className="press glass glass-chip t-label flex h-10 items-center gap-2 rounded-full px-4 text-white hover:bg-white/15">
+                <Share2 size={16} /> Wynik
+              </button>
+            )}
+
+            {/* ROZWIJANY SELEKTOR KRAJU PO PRAWEJ STRONIE */}
+            <div ref={dropdownRef} className="relative">
+              <button onClick={() => setDropdownOpen((o) => !o)}
+                className="press glass glass-chip t-label flex h-10 items-center gap-2 rounded-full px-4 text-white hover:bg-white/15 ring-1 ring-white/15 shadow-lg">
+                <span>{currentCategoryName}</span>
+                <ChevronDown size={14} className={`transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
+              </button>
+
+              {dropdownOpen && (
+                <div className="glass glass-thick absolute right-0 mt-2 w-48 overflow-hidden rounded-2xl py-1.5 shadow-[0_16px_40px_rgba(0,0,0,.75)] ring-1 ring-white/15 backdrop-blur-2xl z-50">
+                  {COUNTRY_OPTIONS.map((c) => (
+                    <button
+                      key={c.id}
+                      onClick={() => {
+                        setSelectedCategory(c.id);
+                        setDropdownOpen(false);
+                        setDone(false);
+                        setPin(null);
+                      }}
+                      className={`press flex w-full items-center justify-between px-4 py-2.5 text-left text-[0.875rem] transition-colors ${
+                        selectedCategory === c.id ? "bg-[#0A84FF]/25 font-semibold text-[#64B5FF]" : "text-white/85 hover:bg-white/10"
+                      }`}>
+                      <span>{c.name}</span>
+                      {selectedCategory === c.id && <Check size={14} className="text-[#0A84FF]" />}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </header>
+
+        {/* FLOATING DOCK */}
+        {art && (
+          <div className="absolute inset-x-0 bottom-0 z-20 flex justify-center px-3 pb-[max(1rem,env(safe-area-inset-bottom))]">
+            <div ref={dockRef} className="relative w-full max-w-4xl">
+
+              {mapMounted && (
+                <div ref={panelRef} className="glass glass-thick absolute bottom-full right-0 mb-3 w-full max-w-[680px] rounded-[28px] p-3 shadow-[0_24px_70px_rgba(0,0,0,.65)] will-change-transform"
+                  style={{ opacity: 0, transform: "scale(.55)" }}>
+                  <div className="mb-2 flex items-center justify-between px-2 pt-1">
+                    <p className="t-label text-white/75">{pin ? "Przeciągnij pinezkę, aby ją przesunąć" : "Dotknij mapy i przeciągnij, aby ustawić miejsce"}</p>
+                    <button onClick={() => setMapOpen(false)} aria-label="Zwiń mapę"
+                      className="press grid h-8 w-8 place-items-center rounded-full bg-white/10 text-white/80 hover:bg-white/20">
+                      <Minimize2 size={15} />
+                    </button>
+                  </div>
+                  <WorldMap guess={pin} onPick={setPin} />
+                </div>
+              )}
+
+              <div className="glass flex flex-col gap-4 rounded-[32px] p-4 shadow-[0_20px_60px_rgba(0,0,0,.6)] sm:flex-row sm:items-center sm:gap-5 sm:p-5">
+                {/* CZAS */}
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-end justify-between gap-3">
+                    <div className="min-w-0">
+                      <p className="t-label text-white/70">Rok</p>
+                      <p className="t-micro truncate text-white/60">{era(year)}</p>
+                    </div>
+                    <output className="t-year num text-white" aria-live="off">{year}</output>
+                  </div>
+                  <YearSlider value={year} onChange={setYear} disabled={done} />
+                  <div className="t-micro num -mt-1 flex justify-between text-white/50"><span>{MIN_YEAR}</span><span>{MAX_YEAR}</span></div>
+                </div>
+
+                {/* MIEJSCE */}
+                <button ref={thumbRef} onClick={toggleMap} disabled={done} aria-expanded={mapOpen} aria-label="Wybierz miejsce na mapie"
+                  className={`press relative h-[5.25rem] w-full shrink-0 overflow-hidden rounded-2xl text-left ring-1 ring-inset hover:ring-white/30 disabled:opacity-60 sm:w-[10.5rem] ${mapOpen ? "ring-[#0A84FF]" : "ring-white/10"}`}>
+                  <WorldMap guess={pin} interactive={false} className="!aspect-auto !h-full !w-full !rounded-none !ring-0" />
+                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/75 to-transparent p-2.5">
+                    <span className="t-label flex items-center gap-1.5 text-white"><Globe2 size={14} /> {pin ? coord(pin) : "Wybierz miejsce"}</span>
+                  </div>
+                </button>
+
+                {/* AKCJA */}
+                <button onClick={submit} disabled={done}
+                  className={`press t-headline h-14 w-full shrink-0 rounded-2xl px-7 sm:w-auto ${ready ? "bg-[#0A84FF] text-white shadow-[0_8px_24px_rgba(10,132,255,.4)] hover:bg-[#2b95ff]" : "bg-white/15 text-white/80 hover:bg-white/20"} disabled:opacity-40`}>
+                  {done ? "Zatwierdzono" : ready ? "Potwierdź typ" : "Postaw pinezkę"}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {lb && <Lightbox art={art} origin={lb} onClose={() => setLb(null)} />}
+      {showResult && done && pin && (
+        <ResultModal art={art} guess={{ year, lat: pin.lat, lon: pin.lon }} puzzleNo={puzzleCount}
+          onProgress={recede} onClose={() => { setShowResult(false); nextPuzzle(); }} onNext={nextPuzzle} />
+      )}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<DailyArtGuesser />);
+</script>
+</body>
+</html>
